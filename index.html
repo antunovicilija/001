@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katolička Svjedočanstva i Baština Bosne i Hercegovine</title>
+    <style>
+        /* Stilovi prilagođeni viziji: Svijetlo lila i Zlatna boja */
+        :root {
+            --lila-svijetla: #f2f7fc; /* Nježna, skroz svijetlo plava boja neba za pozadinu */
+            --lila-glavna: #e3edf7;    /* Nešto tamnija pastelno plava za kartice župa i svetišta */
+            --lila-tamna: #0f2c59;     /* Duboka kraljevsko plava za sve glavne naslove i tekstove */
+            --zlato: #d4af37;          /* Sjajno, živo zlato za krunu, križ i linije */
+            --zlato-tamno: #b8901c;    /* Tamnije zlato za naglašene detalje i kontakte */
+            --tekst-boja: #1a2a40;     /* Tamna mornarsko plava za maksimalnu čitljivost teksta */
+            --bijela: #ffffff;         /* Čista bijela za podlogu glavnih sekcija */
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--lila-svijetla);
+            color: var(--tekst-boja);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        /* Veliki zlatni križ na sredini */
+        .kriz-kontejner {
+            text-align: center;
+            padding-top: 40px;
+        }
+        .zlatni-kriz {
+            font-size: 90px;
+            color: var(--zlato);
+            text-shadow: 2px 2px 10px rgba(170, 140, 44, 0.4);
+            display: inline-block;
+            animation: bljesak 3s infinite alternate;
+        }
+
+        @keyframes bljesak {
+            0% { transform: scale(1); text-shadow: 2px 2px 10px rgba(170, 140, 44, 0.4); }
+            100% { transform: scale(1.05); text-shadow: 2px 2px 20px rgba(170, 140, 44, 0.8); }
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 20px 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--lila-tamna);
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        header p.podnaslov {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--tekst-boja);
+            margin-top: 5px;
+        }
+
+        /* Autor desno ispod naslova */
+        .autor-info {
+            text-align: right;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-right: 20px;
+            font-size: 0.95rem;
+            color: var(--lila-tamna);
+            font-weight: bold;
+        }
+
+        .autor-info a {
+            color: var(--zlato-tamno);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--zlato-tamno);
+            transition: 0.3s;
+        }
+
+        .autor-info a:hover {
+            color: var(--lila-tamna);
+            border-bottom: 1px solid var(--lila-tamna);
+        }
+
+        /* Tražilica */
+        .trazi-kontejner {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .trazi-polje {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid var(--zlato);
+            border-radius: 30px;
+            background-color: var(--bijela);
+            color: var(--tekst-boja);
+            outline: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .trazi-polje:focus {
+            box-shadow: 0 4px 15px rgba(107, 76, 124, 0.3);
+            border-color: var(--lila-tamna);
+        }
+
+        /* Glavni sadržaj i sekcije */
+        .sadrzaj-okvir {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: var(--bijela);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        h2 {
+            color: var(--lila-tamna);
+            border-left: 5px solid var(--zlato);
+            padding-left: 15px;
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--zlato-tamno);
+            font-size: 1.4rem;
+            margin-top: 30px;
+        }
+
+        /* Zlatna linija između stavki */
+        .zlatna-linija {
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--zlato), transparent);
+            margin: 50px 0;
+            border: none;
+        }
+
+        /* Stilovi za popise i kartice župa */
+        .svetiste-kartica, .proslava-kartica, .zupa-kartica {
+            background-color: var(--lila-svijetla);
+            border-left: 4px solid var(--zlato);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .svetiste-rang {
+            display: inline-block;
+            background-color: var(--lila-tamna);
+            color: var(--bijela);
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .zupa-mreza {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .detalj-oznaka {
+            font-weight: bold;
+            color: var(--lila-tamna);
+        }
+
+        /* Gumb Na Vrh */
+        #gumbNaVrh {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            background-color: var(--zlato);
+            color: var(--bijela);
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            display: none;
+            width: 50px;
+            height: 50px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        #gumbNaVrh:hover {
+            background-color: var(--lila-tamna);
+            transform: translateY(-5px);
+        }
+
+        /* Responzivnost za mobitele */
+        @media (max-width: 768px) {
+            section { padding: 20px; }
+            header h1 { font-size: 1.8rem; }
+            .autor-info { text-align: center; padding-right: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Simbol veliki zlatni križ iznad naslova -->
+    <div class="kriz-kontejner">
+        <span class="zlatni-kriz">†</span>
+    </div>
+
+    <header>
+        <h1>Katolička Svjedočanstva i Župe u Bosni i Hercegovini</h1>
+        <p class="podnaslov">Vjera, nada i ljubav koja stoljećima živi u srcu našega naroda</p>
+    </header>
+
+    <!-- Tekst autor desno ispod naslova -->
+    <div class="autor-info">
+        Autor: Ilija Antunović |Napomena: upisite pojam pomjerite prema dolje za rezultat, polje za pretragu mora biti prazno za kompletan popis,<br> Za kontakt na moj Facebook profil <a href="https://www.facebook.com/share/17tZPqv4U2/" target="_blank">klikni ovdje</a>
+    </div>
+
+    <!-- Polje za filtriranje / pretraživanje -->
+    <div class="trazi-kontejner">
+        <input type="text" id="traziPolje" class="trazi-polje" onkeyup="filtrirajSadrzaj()" placeholder="Upišite župu, mjesto, svetiste ili svetkovinu za pretragu...">
+    </div>
+
+    <div class="sadrzaj-okvir" id="glavniSadrzaj">
+
+        <!-- ================= STAVKA 1: POVIJEST ================= -->
+        <section class="filtriraj-sekcija">
+            <h2>1. Svjetlo vjere kroz vjekove: Nastanak i opstanak katoličanstva u BiH</h2>
+            <p>Povijest katoličanstva na blagoslovljenom tlu Bosne i Hercegovine svjedočanstvo je o nesalomljivoj snazi kršćanskoga duha, priča ispisana dubokom vjerom, neumrlom nadom i neizmjernom ljubavlju prema Bogu i rodnoj grudi. Kršćansko sjeme na ovim prostorima posijano je još u apostolsko doba, a kroz stoljeća je izraslo u snažno stablo koje ni najteže životne oluje nisu mogle iščupati.</p>
+            <p>Kroz srednjovjekovnu Bosnu, preko dolaska požrtvovnih sinova svetoga Franje – naših franjevaca, katolička je vjera postala temeljac identiteta i duhovnog utočišta našega naroda. Vrijeme turske vladavine donijelo je teška iskušenja, no vjerni puk i njihovi ujaci očuvali su plamen evanđelja u skrovitosti svojih domova i pod vedrim nebom. Svaka suza i svaka molitva naših predaka ugrađene su u današnju živu Crkvu u Bosni i Hercegovini. Danas, unatoč povijesnim stradanjima i suvremenim iseljavanjima, katoličanstvo ovdje ponosno živi, svjedočeći uskrsnu nadu i pozivajući na mir, opraštanje i zajedništvo u Isusu Kristu.</p>
+        </section>
+
+        <hr class="zlatna-linija">
+
+        <!-- ================= STAVKA 2: OPĆE INFORMACIJE O SVETIŠTIMA ================= -->
+        <section class="filtriraj-sekcija">
+            <h2>2. Sveta utočišta nade: Važnost katoličkih svetišta</h2>
+            <p>Svetišta u Bosni i Hercegovini nisu tek povijesni spomenici ili arhitektonska zdanja; ona su živa srca naše domovinske vjere, mjesta gdje nebo dodiruje zemlju, a umorna ljudska duša pronalazi mir, utjehu i iscjeljenje. U tim svetim prostorima, preplavljenima molitvenim uzdasima generacija, hodočasnik ostavlja svoje breme podno križa ili pred blagim likom Nebeske Majke.</p>
+            <p>Ona su izvorišta s kojih crpimo duhovnu snagu za svakodnevne životne borbe. Ovdje se svjedoči iskrena bratska ljubav, obnavljaju se obitelji kroz sakramente ispovijedi i Euharistije, a vjera se prenosi s koljena na koljeno. Hodočastiti u ova svetišta znači hodati putem obraćenja, prepoznavajući da na stazama ovoga prolaznog svijeta nikada nismo sami, već vođeni Božjom providnošću i ljubavlju.</p>
+            
+            <h3>Pregled svetišta u Bosni i Hercegovini (Od lokalnih do općepoznatih)</h3>
+
+                       <h3>Temeljiti popis svetišta i vrijeme najvećih okupljanja (1. DIO)</h3>
+
+            <!-- ================= OPĆEPOZNATA I SVJETSKA SVETIŠTA ================= -->
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Svjetsko hodočasničko središte</span>
+                <h4>Međugorje – Svetište Kraljice Mira</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Svjetska oaza molitve, obraćenja i mira. Mjesto gdje milijuni pronalaze utjehu kroz sakrament svete ispovijedi i klanjanje pred Presvetim.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Godišnjica Gospinih ukazanja (24. i 25. lipnja)</strong> – kada rijeke hodočasnika pješače iz cijele regije; 
+                    <strong>Festival mladih - Mladifest (od 1. do 6. kolovoza)</strong> – s desecima tisuća mladih iz cijeloga svijeta; 
+                    <strong>Uznesenje BDM - Velika Gospa (15. kolovoza)</strong> te blagdan Uzvišenja Svetog Križa na Križevcu (prva nedjelja nakon Male Gospe).
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Općepoznato i čudotvorno svetište</span>
+                <h4>Svetište sv. Ive, Podmilačje (Jajce)</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Najstarije i jedinstveno nemarijansko svetište u BiH, poznato po stoljetnim svjedočanstvima o čudesnim duhovnim i tjelesnim ozdravljenjima te obraćenjima.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Uočnica i blagdan sv. Ivana Krstitelja (23. i 24. lipnja)</strong>. Najveće masovno okupljanje u unutrašnjosti Bosne (preko 100.000 ljudi). Vjernici tradicionalno pješače danima, dolaze bosi, a središnji trenuci su molitve za bolesnike uočnica navečer i ranojutarnje zavjetne procesije.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Najstarije marijansko svetište</span>
+                <h4>Svetište Gospe Olovske, Olovo</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Najstarije Gospino svetište na Balkanskom poluotoku (spominje se 1454. g.). Čuva povijesni kontinuitet vjere bosanskog čovjeka usprkos svim razaranjima.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Blagdan Velike Gospe (15. kolovoza)</strong> i <strong>Mala Gospa (8. rujna)</strong>. Posebno veliko okupljanje vjernika vjernog puka srijemskog, posavskog i srednjobosanskog sliva zbiva se i 1. svibnja na svečano otvorenje svibanjskih pobožnosti.
+                </p>
+            </div>
+
+            <!-- ================= SREDIŠNJA I BISKUPIJSKA SVETIŠTA ================= -->
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Središnje svetište biskupije</span>
+                <h4>Svetište Kraljice Mira, Hrasno</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Središnje marijansko svetište Trebinjsko-mrkanske biskupije, smješteno u hercegovačkom kršu, podignuto kao trajni vapaj i zahvala za mir.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Druga nedjelja u svibnju (biskupijsko hodočašće)</strong>. Tisuće hodočasnika pješači iz Neuma, Stoca i Čapljine te se u veličanstvenoj procesiji uspinje na brdo Gradina pred kip Majke Božje, moleći za obiteljski blagoslov.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Povijesno marijansko utočište</span>
+                <h4>Svetište Gospe od Kondžila, Komušina</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Svetište Vrhbosanske nadbiskupije koje čuva čudotvornu Gospinu sliku. Predstavlja simbol progonstva, ali i trijumfalnog povratka i ustrajnosti kršćana usorskog kraja.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Uočnica i blagdan Velike Gospe (14. i 15. kolovoza)</strong>, kada se slika u svečanoj procesiji nosi na brdo Kondžilo; te <strong>Regionalni dan mladih Vrhbosanske nadbiskupije (posljednja subota u svibnju)</strong>, s tisućama okupljene mladeži.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Nacionalno svetište mučeništva</span>
+                <h4>Svetište Blaženih Drinskih Mučenica, Goražde</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Mjesto žrtve pet sestara Kćeri Božje ljubavi koje su 1941. godine radije izabrale skok u hladnu Drinu nego gubitak časti i vjernosti Kristu.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Spomendan Blaženih mučenica (15. prosinca)</strong> te <strong>godišnja biskupijska hodočašća u rujnu</strong>. Vjernici i redovništvo se u tišini okupljaju na molitvu pokraj rijeke Drine i u spomen-crkvi.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Golemo franjevačko proštenište</span>
+                <h4>Svetište sv. Ante Padovanskog, Humac (Ljubuški)</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Središnje i najstarije svetište posvećeno svetom Anti u Hercegovini, prepoznatljivo po duhovnoj širini i ispovjedaonicama.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Tijekom cijele pobožnosti "Trinaest utoraka"</strong> uoči blagdana, te osobito za vrijeme <strong>svečane Devetnice i samog blagdana sv. Ante (od 4. do 13. lipnja)</strong>, kada Humac pohode deseci tisuća roditelja s djecom.
+                </p>
+            </div>
+
+            <!-- SVETISTA_2_DIO_NASTAVAK -->
+            <!-- ================= REGIONALNA I LOKALNA SVETIŠTA ================= -->
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Veličanstveno povijesno svetište</span>
+                <h4>Svetište Gospe Ramske, Rama-Šćit</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Jedno od najdubljih i najemotivnijih mjesta pobožnosti u Bosni. Ramska Gospa je simbol opstanka, majčinske utjehe i suza ramskog čovjeka kroz povijesna stradanja i potapanje doline.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Blagdan Uznesenja BDM - Velika Gospa (15. kolovoza)</strong> te osobito <strong>Mala Gospa (8. rujna)</strong> koja je tradicionalni patron i dan kada se u Ramsku kotlinu slije na tisuće raseljenih Ramljaka i hodočasnika iz cijele Središnje Bosne i Hercegovine.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Golemo marijansko svetište</span>
+                <h4>Svetište Širokobriješke Gospe, Široki Brijeg</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Duhovno ognjište i matična stijena vjere za cijelu zapadnu Hercegovinu. Mjesto natopljeno krvlju pobijenih hercegovačkih franjevaca, koje zrači molitvom i nepokolebljivom nadom.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Devetnica Velikoj Gospi (od 6. do 14. kolovoza)</strong> i sam blagdan <strong>Uznesenja BDM (15. kolovoza)</strong>, kada deseci tisuća vjernika pješice u ranim jutarnjim satima pristižu na Brijeg; te <strong>7. veljače</strong> na spomendan pobijenih franjevaca.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Skriveni dragulj tihe molitve</span>
+                <h4>Svetište Voda svetog Jakova, Deževice (Kreševo)</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Skriveno hodočasničko mjesto u pećini u predivnom prirodnom ambijentu, posvećeno svetom Jakovu Markijskom. Izvor čudotvorne vode u pećini stoljećima je mjesto osobnih zavjeta i tihih uslišanja.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Svaka mlada nedjelja (prva nedjelja nakon punog mjeseca) od proljeća do kasne jeseni</strong>. Središnje masovno hodočašće zbiva se na blagdan <strong>sv. Jakova Markijskog (28. studenog)</strong>, unatoč čestim zimskim uvjetima i snijegu, te na ljetnu vanjsku proslavu u srpnju.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Središnje posavsko svetište</span>
+                <h4>Svetište Gospe od Anđela, Gornja Tramošnica</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Duhovno sidro posavskih katolika i simbol povratka na rodnu grudu. Ovo mjesto okuplja ranjenu, ali živu Crkvu koja slavi Majku Božju kao čuvaricu obitelji.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Blagdan Porcijunkule - Gospa od Anđela (2. kolovoza)</strong>. To je dan kada cijela Posavina i njezina golema dijaspora hodočaste u Tramošnicu, ispunjavajući zavjete i tražeći potpuni oprost grijeha u svečanom misnom slavlju na otvorenom.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Lokalno povijesno svetište</span>
+                <h4>Gospino svetište na vrelu Borovica, Vareš</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Planinsko svetište smješteno u srcu povijesne i mučeničke Borovice. Čisti izvor vode pokraj oltara pod vedrim nebom simbolizira nepresušnu vjeru vareškog kraja.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Subota uoči blagdana Male Gospe (rujan)</strong>. Vjernici i iseljenici se u velikom broju okupljaju pješačeći kroz šumske predjele do izvora, gdje u dubokom miru slave svetu Euharistiju i mole za zdravlje i opstanak u rodnom kraju.
+                </p>
+            </div>
+
+            <div class="svetiste-kartica">
+                <span class="svetiste-rang">Skriveno marijansko zborište</span>
+                <h4>Svetište Gospe Stupske, Sarajevo</h4>
+                <p><span class="detalj-oznaka">Značaj i važnost:</span> Stoljetno duhovno utočište i povijesna oaza mira za katolike sarajevskog polja, ali i vjernike koji dolaze iz okolnih srednjobosanskih mjesta.</p>
+                <p><span class="detalj-oznaka">Najveća okupljanja vjernika:</span> 
+                    <strong>Uočnica i blagdan Velike Gospe (14. i 15. kolovoza)</strong>. Cijelo župno dvorište na Stupu postane pretijesno za tisuće vjernika koji u tihoj molitvi prolaze oko Gospina kipa, ispunjavajući svoje obiteljske zavjete.
+                </p>
+            </div>
+
+        </section> <!-- Ovdje se službeno zatvara Sekcija 2 u Vašem kodu -->
+<h2>Popis katoličkih župa u Bosni i Hercegovini</h2>
+<p>U ovom dijelu donosimo detaljan, povijesni i pastoralni popis...</p>
+            <!-- Brzi navigacijski izbornik za lakše pregledavanje -->
+            <div style="text-align: center; margin: 20px 0; padding: 15px; background-color: var(--lila-glavna); border-radius: 8px;">
+                <p style="margin: 0 0 10px 0; font-weight: bold; color: var(--lila-tamna);">Brzi pregled po regijama i biskupijama:</p>
+                <button onclick="document.getElementById('ramski-dekanat').scrollIntoView({behavior: 'smooth'})" style="background-color: var(--lila-tamna); color: white; border: none; padding: 8px 15px; margin: 5px; border-radius: 20px; cursor: pointer; font-family: Georgia;">Vrhbosanska nadbiskupija</button>
+                <button onclick="document.getElementById('banjolucki-dekanat').scrollIntoView({behavior: 'smooth'})" style="background-color: var(--lila-tamna); color: white; border: none; padding: 8px 15px; margin: 5px; border-radius: 20px; cursor: pointer; font-family: Georgia;">Banjolučka biskupija</button>
+                <button onclick="document.getElementById('mostarski-dekanat').scrollIntoView({behavior: 'smooth'})" style="background-color: var(--lila-tamna); color: white; border: none; padding: 8px 15px; margin: 5px; border-radius: 20px; cursor: pointer; font-family: Georgia;">Hercegovačke biskupije</button>
+            </div>
+
+            <!-- Sidro za Vrhbosansku nadbiskupiju -->
+            <div id="ramski-dekanat"></div>
+
+
+            <div class="svetiste-kartica">
+                <!-- ================= ŽUPA 1 (PRIMJER) ================= -->
+                <div class="zupa-kartica">
+                    <h4>Župa Presvetog Srca Isusova, Prozor</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Presveto Srce Isusovo (pomični blagdan, lipanj)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Izuzetno veliko (između 3.000 i 5.000 vjernika i hodočasnika)</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Prozor, Blace, Borovnica, Dobroša, Gmići, Lapsunj, Paljike, Podbor, Šlimac.</p>
+                </div>
+                <!-- ================= RAMSKI DEKANAT ================= -->
+                <!-- Župa Rama-Šćit -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja Blažene Djevice Marije, Rama-Šćit</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza) i Mala Gospa (8. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i iznimno veliko hodočasničko okupljanje (preko 10.000 vjernika iz cijele BiH i dijaspore).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Šćit, Jaklići, Ripci, Podbor, Ploča, Mluša, Sopot, Maglice, Orašac.</p>
+                </div>
+
+                <!-- Župa Gračac -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ante Padovanskog, Gračac</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko regionalno okupljanje (oko 2.000 do 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Gračac, Trišćani, Kućani, Ustirama, Klek, Gorica.</p>
+                </div>
+
+                <!-- Župa Rumboci -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Franje Asiškog, Rumboci</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Franjo Asiški (4. listopada)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko obiteljsko i župno zajedništvo (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Rumboci, Varvara, Zahum.</p>
+                </div>
+
+                <!-- Župa Uzdol -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja, Uzdol</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj (24. lipnja) i Dan mučenika (14. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje do veliko, prožeto dubokim pijetetom i molitvom za žrtve rata (oko 1.000 do 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Uzdol, Donja Vast, Krančići, Ljubunci, Here, Jurići, Pale.</p>
+                </div>
+
+                <!-- ================= SUTJEŠKI DEKANAT ================= -->
+                <!-- Župa Kraljeva Sutjeska -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja, Kraljeva Sutjeska</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj (24. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Povijesno i duhovno iznimno značajno, hodočasnici dolaze u tradicionalnim narodnim nošnjama (preko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Kraljeva Sutjeska, Aljinići, Bištrani, Bulčići, Čatići, Dobrinje, Grmače, Lučići, Poljani, Ratanj, Slapnica, Turbići, Varalići.</p>
+                </div>
+
+                <!-- Župa Kakanj -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Petra i Pavla, Kakanj</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Petar i Pavao (29. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Gradsko i župno slavlje (oko 1.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Kakanj, Bare, Branjugovići, Doboj, Haljinići (povezani dio), h rvati, Slagoščići, Vukanovići.</p>
+                </div>
+
+                <!-- Župa Vareš -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Mihovila Arkanđela, Vareš</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Mihovil (29. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko slavlje u najstarijoj očuvanoj katoličkoj crkvi u BiH (oko 2.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Vareš, Borovica (povijesno vezana), Daštansko, Duboštica, h rvaćani, Javornik, Majdan, Oćevija, Pogar, Pržići, Strica, Višnjići.</p>
+                </div>
+
+                <!-- Župa Vijaka -->
+                <div class="zupa-kartica">
+                    <h4>Župa Bezgrešnog Začeća BDM, Vijaka</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Bezgrešno Začeće BDM (8. prosinca) i Mala Gospa (vanjska proslava)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Manje, ali iznimno emotivno i toplo okupljanje povratnika i iseljenika (oko 500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Vijaka, h rastišta, Magulica, Olova (pastoralno vezano).</p>
+                </div>
+
+                <!-- ================= SARAJEVSKI DEKANAT ================= -->
+                <!-- Župa Katedrala Sarajevo -->
+                <div class="zupa-kartica">
+                    <h4>Župa Presvetog Srca Isusova - Katedrala, Sarajevo</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Presveto Srce Isusovo (lipanj)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko svečano nadbiskupijsko slavlje u matičnoj katedrali (oko 1.500 do 2.000 vjernika, redovništva i svećenstva).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Uži gradski centar, Baščaršija, Marijin Dvor, Skenderija.</p>
+                </div>
+
+                <!-- Župa Stup -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Stup (Sarajevo)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Najveće marijansko okupljanje u sarajevskoj dolini (preko 4.000 hodočasnika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Stup, Doglodi, Bare, Otes, Azići, Blažuj, Ilidža.</p>
+                </div>
+
+                <!-- Župa Novo Sarajevo -->
+                <div class="zupa-kartica">
+                    <h4>Župa Presvetog Trojstva, Novo Sarajevo</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Presveto Trojstvo (pomični blagdan, tjedan nakon Duhova)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Župno i gradsko slavlje u jedinstvenoj crkvi Josipa Vancaša (oko 800 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Novo Sarajevo, Pofalići, Velešići, Grbavica (dio).</p>
+                </div>
+
+                <!-- Župa Briješće -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Leopolda Mandića, Briješće</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Leopold Bogdan Mandić (12. svibnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje, obilježeno pobožnošću prema svecu pomirenja (oko 600 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Briješće, Buljakov Potok, Rajlovac.</p>
+                </div>
+
+                <!-- ================= KREŠEVSKI DEKANAT ================= -->
+                <!-- Župa Kreševo -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Kreševo</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno golemo okupljanje pod okriljem franjevačkog samostana (oko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Kreševo, Alagići, Botunja, Crnići, Deževice (pastoralno vezane), Kojsina, Polje, Vranci, Zunjani.</p>
+                </div>
+
+                <!-- Župa Fojnica -->
+                <div class="zupa-kartica">
+                    <h4>Župa Duha Svetoga, Fojnica</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Duhovi (pomični blagdan, pedeset dana nakon Uskrsa)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Izuzetno veliko duhovno slavlje na samostanskom dvorištu (preko 3.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Fojnica, Bakovići, Gojevići, Lužine, Otigošće, Šćitovo, Lučice, Grabovik.</p>
+                </div>
+
+                <!-- Župa Kiseljak -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ilije Proroka, Kiseljak</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ilija Prorok (20. srpnja) - zaštitnik Bosne</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno narodno i vjersko slavlje, Ilindan okuplja cijelu Lepeničku dolinu (preko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Kiseljak, Bilalovac, Brnjaci, Čalikovac, h rasta, h omolj, h ratići, Jehovac, Potkraj, Radanovići, Završje.</p>
+                </div>
+
+                <!-- Župa Gromiljak -->
+                <div class="zupa-kartica">
+                    <h4>Župa Imena Marijina, Gromiljak</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Ime Marijino (12. rujna)</p>
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+
+                <!-- ================= TRAVNIČKI DEKANAT ================= -->
+                <!-- Župa Travnik -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja, Travnik</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj (24. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i svečano gradsko slavlje podno starog travničkog grada (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Travnik, Bojna, Đelilovac, Gornji Dolac, Kalibunar, Paklarevo (povijesno vezano), Pirota, Poturmah.</p>
+                </div>
+
+                <!-- Župa Ovčarevo -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Mihovila Arkanđela, Ovčarevo</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Mihovil Arkanđeo (29. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno okupljanje vjernika lašvanskog kraja (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Ovčarevo, Gornje Ovčarevo, Galica, Paklarevo, Prići, Radića Brdo, Šipovik.</p>
+                </div>
+
+                <!-- Župa Dolac -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Dolac (Travnik)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Jedna od najstarijih župa lašvanskog kraja, okuplja mnoštvo hodočasnika (oko 3.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Dolac, Grahovik, Guča Gora (stari dio), Polje, Putićevo, Slimena, Vidoševići.</p>
+                </div>
+
+                <!-- Župa Guča Gora -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Franje Asiškog, Guča Gora</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Franjo Asiški (4. listopada)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i duboko emotivno okupljanje oko povijesnog franjevačkog samostana (preko 4.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Guča Gora, Bandol, Bukovica, Čifluk, h rvaćani, Krpeljići, Maljine, Mosor, Radonjići.</p>
+                </div>
+
+                <!-- Župa Nova Bila -->
+                <div class="zupa-kartica">
+                    <h4>Župa Duha Svetoga, Nova Bila</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Duhovi (pomični blagdan)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Izuzetno veliko okupljanje na mjestu koje je simbol opstanka hrvata Lašvanske doline (preko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Nova Bila, Gladnik, Grablje, Mali Mošunj (dio), Pokrajčići, Putićevo, Zabilje.</p>
+                </div>
+
+                <!-- Župa Vitez -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Jurja Mučenika, Vitez</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Juraj (23. travnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo i radosno proljetno slavlje, jedno od najvećih u ovoj regiji (preko 6.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Vitez, Divjak, h rstićevo, Jardol, Krčevine, Kruščica, Mošunj, Rijeka, Šantići, Topala, Veliki Mošunj.</p>
+                </div>
+
+                <!-- ================= ŽEPAČKI DEKANAT ================= -->
+                <!-- Župa Žepče -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Antuna Padovanskog, Žepče</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i masovno okupljanje vjernika i hodočasnika cijelog žepačkog kraja (preko 7.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Žepče, Balačići, Begov Han, Bistrica, h rvaćani, Lupoglav, Orlovik, Papratnica, Radovlje, Tatarbudžak.</p>
+                </div>
+
+                <!-- Župa Osova -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Osova</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno povijesno marijansko svetište žepačkog kraja s iznimno velikim posjetom (oko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Osova, Čustovo Brdo, h rusi, Lug, h rzovo, h valići, h rgovi.</p>
+                </div>
+
+                <!-- Župa Zavidovići -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Josipa, Zavidovići</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Josip (19. ožujka)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje do veliko, s posebnom pobožnošću prema zaštitniku h rvaatskog naroda i obitelji (oko 1.200 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Zavidovići, Bilbije, h rge, Lovnica, Majdan, Perovići, Vrbica.</p>
+                </div>
+
+                <!-- Župa Maglaj -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Leopolda Bogdana Mandića, Maglaj</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Leopold Mandić (12. svibnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Svetište privlači hodočasnike iz cijele Bosne, vrlo toplo i duhovno snažno okupljanje (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Maglaj, Bradići, h rvači, Liješnica, Misurići, Novakovići.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                               <!-- ================= BUGOJANSKI DEKANAT ================= -->
+                <!-- Župa Bugojno -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ante Padovanskog, Bugojno</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Jedno od najvećih slavlja u središnjoj Bosni, trg i crkveno dvorište preplave tisuće hodočasnika (preko 6.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Bugojno, Bristivica, Čaušlije, Drvetine, Garačići, Glavice, h rge, Kandija (stari dio), Kula, Novo Naselje, Poriče, Udurlije, Vedro Polje.</p>
+                </div>
+
+                <!-- Župa Kandija -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ilije Proroka, Kandija (Bugojno)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ilija Prorok (20. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Emotivno i veliko slavlje povratničke zajednice, prožeto ponosom i vjerom (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Kandija, Gornji i Donji Garačići, Odžak, Vučipolje.</p>
+                </div>
+
+                <!-- Župa Gornji Vakuf - Uskoplje -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Gornji Vakuf - Uskoplje</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo i duboko ukorijenjeno marijansko slavlje cijele Uskopaljske doline (preko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Uskoplje, Batuša, Bistrica, Dobrošin, h rnica, Krupa, Paloč, Pidriš, Trnovača, Voljice, Ždrimci.</p>
+                </div>
+
+                <!-- Župa Kupres -->
+                <div class="zupa-kartica">
+                    <h4>Župa Svete Obitelji, Kupres</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveta Obitelj (pomični blagdan, nedjelja u osmini Božića) i Ilindan (20. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno svjedočanstvo obiteljskog zajedništva u monumentalnoj crkvi, osobito živo tijekom ljetnih susreta dijaspore (preko 4.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Kupres, Begovo Selo, h adeline, h rbljine, Odžak, Otinovci, Rastichevo, h zdrilci, Zlosela.</p>
+                </div>
+
+                <!-- ================= TUZLANSKI DEKANAT ================= -->
+                <!-- Župa Tuzla -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Petra i Pavla, Tuzla</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Petar i Pavao (29. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Središnje slavlje tuzlanskog bazena uz franjevački samostan, kulturno i duhovno bogato (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Tuzla, h rvati, Husino (pastoralno vezano), Kiseljak, Ljepunice, Par Selo, Šikara.</p>
+                </div>
+
+                <!-- Župa Šikara -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Franje Asiškog, Šikara (Tuzla)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Franjo Asiški (4. listopada)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Prelijepo i toplo zajedništvo vjernika tuzlanskog kraja (oko 1.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Šikara, h rvati, h lipići, Ljepunice, Milešići, Mramor.</p>
+                </div>
+
+                <!-- Župa Morančani -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Jurja Mučenika, Morančani</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Juraj (23. travnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Povijesna župa iz koje su nikle mnoge druge, slavlje okuplja brojne obitelji (oko 1.200 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Morančani, Ljubače, Pasci, Poljana, Suha.</p>
+                </div>
+
+                <!-- Župa Breške -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Breške</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno hodočasničko mjesto na obroncima Majevice, ispunjeno pjesmom i molitvom (oko 2.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Breške, Dokanj, Gornja Obodnica, h rvati, Tisovac, Crno Blato.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                <!-- ================= ŠAMAČKI DEKANAT (POSAVINA) ================= -->
+                <!-- Župa Orašje -->
+                <div class="zupa-kartica">
+                    <h4>Župa blaženog Alojzija Stepinca, Orašje</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Blaženi Alojzije Stepinac (10. veljače)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Izuzetno veliko i svečano okupljanje vjernika cijele Posavine uz rijeku Savu, prožeto domoljubljem i molitvom (preko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Orašje, Donja Mahala, Kostrč, Ugljara, Bok (dio).</p>
+                </div>
+
+                <!-- Župa Tolisa -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Tolisa</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno, jedno od najvećih marijanskih slavlja u cijeloj Bosni i Hercegovini. Dvorište monumentalne crkve s dva zvonika preplave rijeke hodočasnika (preko 10.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Tolisa, Donja Mahala, Kostrč, Matići, Ugljara, Bukova Greda.</p>
+                </div>
+
+                <!-- Župa Domaljevac -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ane, Domaljevac</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveta Ana (26. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo i radosno ljetno slavlje koje okuplja i tisuće vjernika iz dijaspore. Tradicionalno se moli za majke i obitelji (oko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Domaljevac, Bazik, Grebnice (dio).</p>
+                </div>
+
+                <!-- Župa Vidovice -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Vida Mučenika, Vidovice</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Vid (15. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko i duboko duhovno slavlje u župi koja je Crkvi dala rekordan broj svećenika i redovnica (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Vidovice, Jenjić, Kopanice.</p>
+                </div>
+
+                <!-- Župa Oštra Luka - Bok -->
+                <div class="zupa-kartica">
+                    <h4>Župa Imena Marijina, Oštra Luka - Bok</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Ime Marijino (12. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Prelijepo posavsko proštenje, ispunjeno ponosom i zahvalnošću Majci Božjoj (oko 2.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Oštra Luka, Bok, Obudovac (dio).</p>
+                </div>
+
+                <!-- ================= DERVENTSKI DEKANAT ================= -->
+                <!-- Župa Derventa -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Jurja Mučenika, Derventa</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Juraj (23. travnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Simbolički i duhovno iznimno važno slavlje za povratnike i prognane koji se na ovaj dan u velikom broju vraćaju na svoja ognjišta (oko 1.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Derventa, Begluci, Bijelo Brdo (dio), Kulina, Omeragići, Tetima, Živinice.</p>
+                </div>
+
+                <!-- Župa Plehan -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Marka Evanđelista, Plehan</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Marko (25. travnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Svetište i franjevački samostan koji unatoč potpunom ratnom razaranju ponovno niču iz pepela. Markovo okuplja tisuće vjernika u suzama radosnicama i nadi (oko 3.000 hodočasnika i povratnika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Plehan, Bukovac, Modran, Poljari, Stanići, Šušnjari, Zelenike.</p>
+                </div>
+
+                <!-- Župa Koraće -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM, Koraće</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno povijesno zborno mjesto derventskog kraja, ispunjeno molitvama za obnovu obiteljskih domova (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Koraće, Barica, h rstani, Lužani, Novo Selo, Zborište.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                              <!-- ================= USORSKI DEKANAT ================= -->
+                <!-- Župa Komušina -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM - Kondžilo, Komušina</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza) i hodočašće na brdo Kondžilo</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo i veličanstveno hodočasničko slavlje, jedno od najznačajnijih u Vrhbosanskoj nadbiskupiji, gdje se pred čudotvornom slikom Gospe okuplja tisuće prognanih i domaćih vjernika (preko 8.000 hodočasnika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Komušina Gornja, Komušina Donja, Balotići, Bežlja, Kamenica, Slatina, Studenci.</p>
+                </div>
+
+                <!-- Župa Jelah -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja, Jelah</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj (24. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Živahno i radosno okupljanje usorskih katolika i gostiju iz okolnih općina (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Jelah, Rosulje, Vukovo, Mrkotić, Kalošević.</p>
+                </div>
+
+                <!-- Župa Sivša -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ante Padovanskog, Sivša</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko i iznimno posjećeno pučko slavlje, jedno od duhovnih središta usorskog kraja (oko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Sivša, Blaževci, Jabučić Polje, Omanjska (stari dio), Srednja Omanjska, Alibegovci.</p>
+                </div>
+
+                <!-- Župa Teslić -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Josipa, Teslić</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Josip (19. ožujka)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje, ali duhovno snažno gradsko okupljanje u znaku zaštitnika radnika i obitelji (oko 600 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Teslić, Bardaci, Đulići, Ružević, Stenjak.</p>
+                </div>
+
+                <!-- ================= DOBORSKI DEKANAT ================= -->
+                <!-- Župa Odžak -->
+                <div class="zupa-kartica">
+                    <h4>Župa Glavosjeka sv. Ivana Krstitelja, Odžak</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Glavosjek svetog Ivana Krstitelja (29. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Središnje veliko i svečano slavlje u Odžačkom kraju, prožeto pjesmom, narodnim nošnjama i povratničkim zajedništvom (preko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Odžak, Ada, h rvati, Novo Selo (dio), Posavska Mahala.</p>
+                </div>
+
+                <!-- Župa Potočani -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Marka Evanđelista, Potočani (Odžak)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Marko (25. travnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Povijesna posavska župa, slavlje okuplja brojne vjernike koji mole blagoslov polja i obitelji (oko 1.800 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Potočani, Duge Njive, h rnjaci, h rstik, Jošava, Lipik.</p>
+                </div>
+
+                <!-- Župa Modriča -->
+                <div class="zupa-kartica">
+                    <h4>Župa Rođenja BDM, Modriča</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Mala Gospa (8. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje do veliko, s posebnim naglaskom na okupljanje raseljenih župljana koji čuvaju uspomenu na svoj rodni kraj (oko 800 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Modriča, Dobrininja, Garevac (pastoralno vezan), Riječani.</p>
+                </div>
+
+                <!-- Župa Prud -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Klare Asiške, Prud</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveta Klara (11. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Toplo, emotivno obiteljsko i ljetno slavlje na samom sjeveru Bosne, na ušću Bosne u Savu (oko 1.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Prud i okolni zaseoci uz rijeku Savu.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                <!-- SLJEDECA_ZUPA_POČINJE_OVDJE -->
+                <!-- ================= SREDIŠNJA BOSNA I SARAJEVO (PREOSTALE ŽUPE) ================= -->
+                <!-- Župa Podhum - Žitače -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ante Padovanskog, Podhum - Žitače (Neretvica)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Duboko emotivno, ponosno i dirljivo okupljanje prognanih vjernika i povratnika u dolini Neretvice koji čuvaju pradjedovsku vjeru (oko 1.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Žitače, Podhum, Budišnja Ravan, h rstani, Jasenik, Kostajnica, Mravići, Obrenovac, Parsovići, Pokojište, Seonica, Solakova Kula.</p>
+                </div>
+
+                <!-- Župa Tarčin -->
+                <div class="zupa-kartica">
+                    <h4>Župa Sviju Svetih, Tarčin (Hadžići)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Svi Sveti (1. studenog)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Manja, ali iznimno povezana i duhovno topla zajednica u sarajevskom zaleđu (oko 300 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Tarčin, Hadžići, Pazarić, Raštelica, h ršći.</p>
+                </div>
+
+                <!-- Župa Olovo -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM - Gospino Svetište, Olovo</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza) i Mala Gospa (8. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo i povijesno hodočašće. Budući da je ovo najstarije marijansko svetište na Balkanu, privlači vjernike iz svih dijelova domovine (preko 5.000 hodočasnika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Olovo, Gurdići, Ponijerka, h rvaći, te hodočasnički smještajni prostori.</p>
+                </div>
+
+                <!-- Župa Crkvice -->
+                <div class="zupa-kartica">
+                    <h4>Župa Bezgrešnog Začeća BDM, Crkvice (Zenica)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Bezgrešno Začeće BDM (8. prosinca)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i svečano gradsko okupljanje zeničkih katolika, popraćeno bogatim duhovnim programom (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Zenica (dio grada Crkvice), Babino, Gradišće, h rasti.</p>
+                </div>
+
+                <!-- Župa Čajdraš -->
+                <div class="zupa-kartica">
+                    <h4>Župa Srca Marijina, Čajdraš (Zenica)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Bezgrješno Srce Marijino (pomični blagdan nakon Presvetog Srca Isusova)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno i radosno prigradsko zborovanje, obilježeno iskrenom marijanskom pobožnošću (oko 1.200 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Čajdraš, Lokvine, Vjetrenice, h rst, Gornji Čajdraš.</p>
+                </div>
+
+                <!-- ================= ISTOČNA BOSNA I PODRINJE ================= -->
+                <!-- Župa Goražde -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Dominika - Svetište Drinskih Mučenica, Goražde</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Blažene Drinske mučenice (15. prosinca) i sv. Dominik (8. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Sve veće i duhovno iznimno snažno hodočašće vjernika iz cijeloga svijeta koji dolaze odati počast žrtvi i svetosti sestara mučenica (preko 2.000 hodočasnika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Goražde, Foča, Višegrad, Rogatica, Rudo.</p>
+                </div>
+
+                <!-- Župa Zvornik -->
+                <div class="zupa-kartica">
+                    <h4>Župa Presvetog Srca Isusova, Zvornik</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Presveto Srce Isusova (lipanj)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Mala, ali povijesno neprocjenjiva "živa Crkva" u dijaspori, koja svjedoči opstanak na samoj granici srbije (oko 150 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Zvornik, Srebrenica, Bratunac, Milići, Vlasenica.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                <!-- ================= BANJOLUČKI DEKANAT ================= -->
+                <!-- Župa Katedrala Banja Luka -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Bonaventure - Katedrala, Banja Luka</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Bonaventura (15. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Središnje i dostojanstveno biskupijsko slavlje koje okuplja preostale domaće vjernike, redovništvo i hodočasnike iz cijele regije (oko 1.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Uži gradski centar Banje Luke, Borik, Lauš, Petrićevac (dio), Nova Varoš.</p>
+                </div>
+
+                <!-- Župa Petrićevac -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ante Padovanskog - Samostan, Petrićevac (Banja Luka)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko i duboko emotivno okupljanje. Ovo povijesno franjevačko svetište, koje je pohodio i papa Ivan Pavao II., okuplja mnoštvo iseljenih i domaćih vjernika (preko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Petrićevac, Motike, Novakovići, Paprikovac, Rakovačke Bare, Vujinovići.</p>
+                </div>
+
+                <!-- Župa Marija Zvijezda -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM - Trapisti, Marija Zvijezda (Banja Luka)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Prelijepo marijansko hodočašće u nekadašnjem najvećem trapističkom samostanu na svijetu, prepoznatljivom po duhovnoj kulturi i molitvi (oko 1.200 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Delibašino Selo, Trapisti, Priječani, Rebrovac (dio).</p>
+                </div>
+
+                <!-- Župa Budžak -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja, Budžak (Banja Luka)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj (24. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje, toplo prigradsko župno zajedništvo prožeto ustrajnošću i kršćanskom nadom (oko 500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Budžak, Lazarevo, h rvatski Milanovac, Šargovac.</p>
+                </div>
+
+                <!-- Župa Barlovci -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Vida Mučenika, Barlovci</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Vid (15. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Duboko dirljivo i tradicionalno ljetno okupljanje prognanih župljana koji se svake godine s ljubavlju vraćaju proslaviti zaštitnika (oko 1.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Barlovci, Bukovica, Dragočaj, h rvaćani, Kuljani, Ojdanići, Ramići.</p>
+                </div>
+
+                <!-- ================= JAJČKI DEKANAT ================= -->
+                <!-- Župa Jajce -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM - Samostan, Jajce</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i masovno vjersko slavlje u kraljevskom gradu, gdje se pod okriljem franjevačkog samostana i moći sv. Luke Evanđelista okuplja cijeli kraj (preko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Jajce, Bare, Borci, h rvati, Mile, Peratovići, Prudi, Rika, Smionica, Vrbica.</p>
+                </div>
+
+                <!-- Župa Podmilačje -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja - Svetište, Podmilačje</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj - Sv. Ivo (24. lipnja) - Svetište čudesnih ozdravljenja</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo, biblijsko hodočašće. Jedno od najvećih okupljanja na cijelom Balkanu. Tisuće ljudi pješače danima i u poniznosti, često i bosi, dolaze pred staru crkvicu tražiti milost i tjelesno i duhovno iscjeljenje (preko 100.000 hodočasnika kroz dva dana) [1].</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Podmilačje, Bešpelj, Cvitović, Divičani, h rastići, Kuprešani, Lendići, Lučina, Magarovci, Šibenica.</p>
+                </div>
+
+                <!-- Župa Liskovica -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ilije Proroka, Liskovica</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ilija Prorok (20. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Manje, ali iznimno hrabro i ponosno slavlje male povratničke zajednice koja unatoč teškoj povijesti obnavlja svoja ognjišta i slavi zaštitnika Bosne (oko 400 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Liskovica, Donja Liskovica, Gornja Liskovica i okolni zaseoci prema Mrkonjić Gradu.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                              <!-- ================= LIVANJSKI DEKANAT ================= -->
+                <!-- Župa Livno -->
+                <div class="zupa-kartica">
+                    <h4>Župa Svih Svetih, Livno</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Svi Sveti (1. studenog) i sv. Ivan Krstitelj (vanjska proslava na Gorici)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i iznimno veliko gradsko i župno slavlje, osobito uz veličanstveni franjevački samostan na Gorici koji okuplja tisuće domaćih i iseljenih obitelji (preko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Livno, Brina, h rvaćani, Megdan, Prikorika, Suhača, Zastinje, Žabljak.</p>
+                </div>
+
+                <!-- Župa Bila -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Franje Asiškog, Bila (Livno)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Franjo Asiški (4.stack listopada)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i iznimno živo pučko proštenje livanjskog polja, obilježeno snažnim obiteljskim zajedništvom (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Bila, Čelebić, h rstani, Kovačić, Lusnić, Priluka, Srđevići.</p>
+                </div>
+
+                <!-- Župa Podhum -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja, Podhum (Livno)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj (24. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo i radosno ljetno slavlje na obalama Buškog blata koje privlači ogroman broj raseljenih župljana iz cijelog svijeta (preko 4.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Podhum, Golinjevo, Miši, Podgradina, Renići, Vržerala.</p>
+                </div>
+
+                <!-- Župa Ljubunčić -->
+                <div class="zupa-kartica">
+                    <h4>Župa Glavosjeka sv. Ivana Krstitelja, Ljubunčić</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Glavosjek svetog Ivana Krstitelja (29. kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i tradicionalno slavlje u podnožju planine Golije, prožeto starim molitvenim običajima i hodočasničkim zavjetima (oko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Ljubunčić, h rstani, h rzovo, Lusnić, Prisap, h valići, Žirović.</p>
+                </div>
+
+                <!-- Župa Glamoč -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ilije Proroka, Glamoč</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ilije Prorok (20. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje do veliko, s iznimnim duhovnim značajem za zajednicu povratnika koja ponosno svjedoči i slavi zaštitnika cijele Bosne (oko 1.200 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Glamoč, Biličić, h rasti, Jakir, Kovačevci, Luke, Petrovo Vrelo, Vrba.</p>
+                </div>
+
+                <!-- ================= BIHAĆKO - DRVARSKI DEKANAT ================= -->
+                <!-- Župa Bihać -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ante Padovanskog, Bihać</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko i svečano gradsko slavlje u povijesnom gradu na Uni, koje u duhu zajedništva pohode i vjernici susjednih župa (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Bihać, Golubić, h rgar, Kralje, Orljani, Vedro Polje, Zavalje (pastoralno povezano).</p>
+                </div>
+
+                <!-- Župa Drvar -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Josipa, Drvar</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Josip (19. ožujka) i Dan mučenika (27. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Srednje, ali duhovno iznimno snažno i dirljivo okupljanje male, ali ustrajne katoličke zajednice koja se u molitvi i nadi sjeća svojih povijesnih stradanja (oko 600 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Drvar, Bosansko Grahovo (pastoralno vezano), Oštrelj, Potoci, Prekaja.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                                <!-- ================= MOSTARSKI DEKANAT ================= -->
+                <!-- Župa Katedrala Mostar -->
+                <div class="zupa-kartica">
+                    <h4>Župa Marije Majke Crkve - Katedrala, Mostar</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Marija Majka Crkve (pomični blagdan, ponedjeljak nakon Duhova)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i svečano biskupijsko slavlje u matičnoj katedrali, koje okuplja mnoštvo vjernika grada Mostara i cijele biskupije (preko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Središnji i zapadni dio grada Mostara, naselja oko Avenije, ulica kralja Tomislava i pripadajući gradski kvartovi.</p>
+                </div>
+
+                <!-- Župa sv. Petra i Pavla Mostar -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Petra i Pavla - Franjevački samostan, Mostar</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Petar i Pavao (29. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno golemo i duhovno iznimno snažno okupljanje uz monumentalnu crkvu i najviši zvonik u Hercegovini, povijesno središte vjere u gradu (preko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Stariji dio Mostara, Podhum, Balinovac, Zahum, h rvat, Đikovina, Panjevina, te prigradsko naselje Ilići.</p>
+                </div>
+
+                <!-- Župa Cim -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Marka Evanđelista, Cim (Mostar)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Marko (25. travnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i radosno župno i proljetno slavlje u povijesnom naselju koje čuva i starokršćansku baziliku u svojim temeljima (oko 2.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Cim, Gornji Cim, Goranci (pastoralno povezani dio), te okolne ulice i zaseoci.</p>
+                </div>
+
+                <!-- Župa Ilići -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Luke Evanđelista, Ilići (Mostar)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Luka (18. listopada)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Toplo jesenje župno zajedništvo u prelijepom mostarskom predgrađu uz izvor rijeke Radobolje (oko 1.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Ilići, Vrelo Radobolje, Kopanice i granični dijelovi prema Balinovcu.</p>
+                </div>
+
+                <!-- ================= ŠIROKOBRIJEŠKI DEKANAT ================= -->
+                <!-- Župa Široki Brijeg -->
+                <div class="zupa-kartica">
+                    <h4>Župa Uznesenja BDM - Samostan, Široki Brijeg</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza) i spomen na pobijene franjevce (7. veljače)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo, veličanstveno i rijetko viđeno hodočasničko mnoštvo. Širokobriješka Gospa na "Brijegu" je duhovna majka cijele zapadne Hercegovine, te devetnicu i sam blagdan pohode deseci tisuća vjernika u suzama, pjesmi i molitvi (preko 20.000 hodočasnika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Široki Brijeg, Cadiovina, Dobrkovići, Knešpolje, Lise, Mokro, Oklaji, Pribinovići, Puringaj, Trn, Turčinovići, Uzarići.</p>
+                </div>
+
+                <!-- Župa Kočerin -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Petra i Pavla, Kočerin</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Petar i Pavao (29. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Izuzetno veliko pučko i vjersko slavlje, prepoznatljivo po crkvi s najvećim likom sv. Franje u mozaiku na svijetu (preko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Kočerin, Budim, Crne Lokve, Gornji Mamići, Kolobarića Dolac, Ljubotići, Pripolje, Rujan.</p>
+                </div>
+
+                <!-- Župa Ljuti Dolac -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ane, Ljuti Dolac</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveta Ana (26. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko i prelijepo ljetno slavlje u Mostarskom blatu, obilježeno dubokim zavjetima majki i obitelji (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Ljuti Dolac, Biograci, Jare (dio), Podšvrakava.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                                <!-- ================= ČITLUČKI DEKANAT ================= -->
+                <!-- Župa Međugorje -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Jakova Apostola - Svetište Kraljice Mira, Međugorje</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Godišnjica Gospinih ukazanja (25. lipnja), Sveti Jakov (25. srpnja) i Festival mladih - Mladifest (početak kolovoza)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo, planetarno i nadbiskupijsko hodočasničko mnoštvo. Međugorje je svjetska oaza molitve i mira. Tijekom ljetnih mjeseci, Mladifesta i obljetnica, župa i vanjski oltar prime stotine tisuća hodočasnika iz cijeloga svijeta u dubokoj molitvi, klanjanju i sakramentu svete ispovijedi (preko 50.000 vjernika dnevno u vrhuncima sezone).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Međugorje, Bijakovići, Vionica, Miletina, Šurmanci.</p>
+                </div>
+
+                <!-- Župa Čitluk -->
+                <div class="zupa-kartica">
+                    <h4>Župa Krista Kralja, Čitluk</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Krist Kralj (pomični blagdan, posljednja nedjelja kroz godinu - studeni)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i dostojanstveno gradsko slavlje u srcu Brotnja, popraćeno duhovnom obnovom i svečanim procesijama (oko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Čitluk, Gradnići (stari dio), Služanj, Potpolje, Ograđenici (dio).</p>
+                </div>
+
+                <!-- Župa Gradnići -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Blaža, Gradnići (Čitluk)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Blaž (3. veljače)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Najstarija župa u Brotnju, povijesna kolijevka pismenosti i duhovnosti gdje je djelovao fra Didak Buntić. Blagdan sv. Blaža i blagoslov grla okuplja brojne hodočasnike (oko 2.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Gradnići, Paoča, Blatnica.</p>
+                </div>
+
+                <!-- Župa Čerin -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Stjepana Prvomučenika, Čerin</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Stjepan (3. kolovoza - vanjska proslava)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i tradicionalno ljetno pučko slavlje u gornjem Brotnju, prepoznatljivo po masovnom okupljanju iseljenika (preko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Čerin, Donji Veliki Ograđenik, Gornji Veliki Ograđenik, Donji Mali Ograđenik, Gornji Mali Ograđenik, Blatnica (dio), Dragićina, Čalići, Dobro Selo.</p>
+                </div>
+
+                <!-- ================= POSUŠKI DEKANAT ================= -->
+                <!-- Župa Posušje -->
+                <div class="zupa-kartica">
+                    <h4>Župa Bezgrešnog Začeća BDM, Posušje</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Velika Gospa (15. kolovoza - vanjska proslava) i Bezgrešno Začeće (8. prosinca)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i masovno slavlje podno planine Raduše. Posuška proslava Velike Gospe, poznata i kao "Posuško lito", okuplja rijeke domaćih obitelji i dijaspore u prelijepom zajedništvu (preko 10.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Posušje, Čitluk (posuški), Batin, Osoje, Rastovača, Landeke, h rvaćani.</p>
+                </div>
+
+                <!-- Župa Posuški Gradac -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Franje Asiškog, Posuški Gradac</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Franjo Asiški (4. listopada)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Povijesna i ponosna župa posuškog kraja. Slavlje svetog Franje okuplja brojne vjernike koji u narodnim nošnjama slave franjevačku baštinu (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Posuški Gradac, Broćanac, Crnogorac, Gornji Gradac, Vrpolje.</p>
+                </div>
+
+                <!-- Župa Kočerin / Rakitno -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ivana Krstitelja, Rakitno (Posušje)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ivan Krstitelj (24. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Prelijepo i svježe ljetno proštenje na visokoj rakitanskoj visoravni, ispunjeno planinskim mirom i dubokim zavjetima svetom Ivi (oko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Rakitno, Poklečani, Sutina, Vrpolje (gornji dio).</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                                <!-- ================= LJUBUŠKI DEKANAT ================= -->
+                <!-- Župa Humac -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ante Padovanskog - Samostan, Humac (Ljubuški)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ante Padovanski (13. lipnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Golemo, veličanstveno i jedno od najposjećenijih proštenja u cijeloj Hercegovini. Devetnicu i sam blagdan na Humcu pohode nepregledne rijeke hodočasnika iz cijele regije i susjedne h rvaatske, tražeći zagovor sveca svega svijeta (preko 15.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Humac, Grad Ljubuški, Bijača, Cerno, Crnopod, Hardomilje, Hrašljani, Lisice, Mostarska Vrata, Pregrađe, Teskera, Vašarovići.</p>
+                </div>
+
+                <!-- Župa Vitina -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Paskala Bajlonskog, Vitina</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Paskal Bajlonski (17. svibnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Tradicionalno veliko i radosno proljetno slavlje u ljubuškom kraju, obilježeno dubokom euharistijskom pobožnošću (oko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Vitina, Brljica, Grabovnik, Grljevići (dio), Klobuk (stari dio), Lipno, Otok, Proboj.</p>
+                </div>
+
+                <!-- Župa Veljaci -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ilije Proroka, Veljaci</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ilija Prorok (20. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Jedna od najstarijih župa u ovom dijelu Hercegovine. Ilindan u Veljacima privlači mnoštvo vjernika uz prelijepu rijeku Trebižat (preko 4.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Veljaci, Grab, h ratište, Orahovlje, Šipovača, Vojnići.</p>
+                </div>
+
+                <!-- ================= GRUDSKI DEKANAT ================= -->
+                <!-- Župa Grude -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Katarine Aleksandrijske, Grude</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveta Katarina (25. studenog)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Svečano i veliko jesensko gradsko slavlje, ispunjeno kulturnim i duhovnim sadržajima te snažnim župnim zajedništvom (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Grude, Blaževići, Dragićina (dio), Pocrte, Ružići (dio).</p>
+                </div>
+
+                <!-- Župa Gorica - Sovići -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Stjepana Prvomučenika, Gorica - Sovići</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Stjepan (3. kolovoza - vanjska proslava)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i tradicionalno ljetno pučko slavlje na samoj granici s Imotskom krajinom, koje okuplja ogroman broj domaćih ljudi i iseljenika (preko 5.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Gorica, Sovići, Bobanova Draga, h rstani.</p>
+                </div>
+
+                <!-- ================= TREBINJSKO-MRKANSKA BISKUPIJA ================= -->
+                <!-- Župa Hrasno -->
+                <div class="zupa-kartica">
+                    <h4>Župa Bezgrešnog Začeća BDM - Svetište Kraljice Mira, Hrasno</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Kraljica Mira (druga nedjelja u svibnju)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Središnje hodočasničko mjesto cijele Trebinjsko-mrkanske biskupije. Tisuće vjernika iz istočne i južne Hercegovine pješače i okupljaju se oko kipa Majke Božje na brdu Gradina, moleći za mir u obiteljima i svijetu (preko 5.000 hodočasnika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Hrasno, Brštanica, Cerovica, Dutići, Glumina, Hutovo (pastoralno vezan dio), Kozarica, Neumsko zaleđe (manji zaseoci).</p>
+                </div>
+
+                <!-- Župa Stolac -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Ilije Proroka, Stolac</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Ilija Prorok (20. srpnja)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko, radosno i iznimno značajno slavlje za opstanak i zajedništvo h rvatskog naroda u dolini Bregave, popraćeno tradicionalnim Ilindanskim slavljem (preko 3.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Stolac, Aladinići (stari dio), Barane, Borojevići, h rstani, Gorica, Poprati, Radimlja, h valići.</p>
+                </div>
+
+                <!-- === OZN_NASTAVAK: Sljedeće župe iz iduće poruke lijepite TOČNO ISPOD ove linije === -->
+                                <!-- ================= PREOSTALE JUŽNE ŽUPE ================= -->
+                <!-- Župa Neum -->
+                <div class="zupa-kartica">
+                    <h4>Župa Gospe od Zdravlja, Neum</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Gospa od Zdravlja (21. studenog)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko i svečano slavlje u jedinom bosanskohercegovačkom izlazu na more, koje okuplja brojne domaće vjernike i hodočasnike iz zaleđa (oko 2.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Neum, Gradac (neumski), Duži, Jelenk, h rstani, h ubalj.</p>
+                </div>
+
+                <!-- Župa Čapljina -->
+                <div class="zupa-kartica">
+                    <h4>Župa sv. Franje Asiškog, Čapljina</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Sveti Franjo Asiški (4. listopada)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veličanstveno i masovno gradsko slavlje u dolini Neretve, prožeto procesijama i bogatim duhovnim programom (preko 4.500 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Čapljina, Dretelj, Grabovina, h rvaćani, Trebižat.</p>
+                </div>
+
+                <!-- Župa Klepci -->
+                <div class="zupa-kartica">
+                    <h4>Župa Imena Marijina, Klepci (Čapljina)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Ime Marijino (12. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Povijesno i duhovno iznimno značajno slavlje, ispunjeno nadom i molitvama za povratak i opstanak vjernika na lijevoj obali Neretve (oko 800 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Klepci, Čeljevo, Gabela Polje (dio), Loznica, Prebilovci, Višići.</p>
+                </div>
+
+                <!-- Župa Aladinići -->
+                <div class="zupa-kartica">
+                    <h4>Župa Svih Svetih, Aladinići (Dubrave)</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Svi Sveti (1. studenog)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Veliko pučko i vjersko slavlje na Dubravskoj visoravni koje okuplja vjernike iz brojnih okolnih zaseoka (oko 3.000 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Aladinići, Bobanovo Selo (dio), Crnići, h rstani, Pješivac, Prenj.</p>
+                </div>
+
+                <!-- Župa Trebinje -->
+                <div class="zupa-kartica">
+                    <h4>Župa Rođenja BDM - Katedrala, Trebinje</h4>
+                    <p><span class="detalj-oznaka">Glavna svetkovina:</span> Mala Gospa (8. rujna)</p>
+                    <p><span class="detalj-oznaka">Veličina okupljanja:</span> Mala, ali povijesno neprocjenjiva "živa Crkva" na samom jugu Hercegovine. Katedralno slavlje okuplja preostale vjerne katolike i hodočasnike iz cijele regije (oko 300 vjernika).</p>
+                    <p><span class="detalj-oznaka">Pripadajuća mjesta i sela:</span> Grad Trebinje, Ravno (pastoralno povezani dio), te okolni manji povijesni katolički zaseoci u Popovu polju.</p>
+                </div>
+
+            </div> <!-- Kraj div-a listaZupa -->
+        </section> <!-- Kraj sekcije 4 -->
+
+    </div> <!-- Kraj div-a glavniSadrzaj -->
+
+    <!-- Gumb Na Vrh -->
+    <button onclick="vratiNaVrh()" id="gumbNaVrh" title="Idi na vrh">↑</button>
+
+    <!-- JavaScript za tražilicu (filtriranje) i gumb Na Vrh -->
+    <script>
+        // Funkcija za filtriranje sadržaja u realnom vremenu
+        function filtrirajSadrzaj() {
+            var input = document.getElementById("traziPolje");
+            var filter = input.value.toLowerCase();
+            
+            // Filtriranje kartica župa
+            var zupaKartice = document.getElementsByClassName("zupa-kartica");
+            for (var i = 0; i < zupaKartice.length; i++) {
+                var tekst = zupaKartice[i].innerText || zupaKartice[i].textContent;
+                if (tekst.toLowerCase().indexOf(filter) > -1) {
+                    zupaKartice[i].style.display = "";
+                } else {
+                    zupaKartice[i].style.display = "none";
+                }
+            }
+
+            // Filtriranje cijelih sekcija
+            var sekcije = document.getElementsByClassName("filtriraj-sekcija");
+            for (var j = 0; j < sekcije.length; j++) {
+                var tekstSekcije = sekcije[j].innerText || sekcije[j].textContent;
+                if (tekstSekcije.toLowerCase().indexOf(filter) > -1) {
+                    sekcije[j].style.display = "";
+                } else {
+                    sekcije[j].style.display = "none";
+                }
+            }
+        }
+
+        // Upravljanje gumbom Na Vrh
+        window.onscroll = function() { upravljajGumbom() };
+
+        function upravljajGumbom() {
+            var gumb = document.getElementById("gumbNaVrh");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                gumb.style.display = "block";
+            } else {
+                gumb.style.display = "none";
+            }
+        }
+
+        function vratiNaVrh() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+            </div> <!-- Kraj div-a listaZupa -->
+        </section> <!-- Kraj sekcije 4 -->
+
+    </div> <!-- Kraj div-a glavniSadrzaj -->
+
+    <!-- Gumb Na Vrh -->
+    <button onclick="vratiNaVrh()" id="gumbNaVrh" title="Idi na vrh">↑</button>
+
+    <!-- JavaScript za tražilicu (filtriranje) i gumb Na Vrh -->
+    <script>
+                // Pomoćna funkcija koja uklanja kvačice s naših slova radi lakše pretrage
+        function ukloniKvacice(tekst) {
+            return tekst.toLowerCase()
+                .replace(/[čć]/g, 'c')
+                .replace(/ž/g, 'z')
+                .replace(/š/g, 's')
+                .replace(/đ/g, 'd');
+        }
+
+        // Nova, napredna funkcija za filtriranje sadržaja u realnom vremenu
+        function filtrirajSadrzaj() {
+            var input = document.getElementById("traziPolje");
+            // Pretvaramo ono što je korisnik upisao: mala slova + skidamo kvačice
+            var filter = ukloniKvacice(input.value);
+            
+            // 1. Filtriranje kartica župa i svetišta
+            var sveKartice = document.querySelectorAll(".zupa-kartica, .svetiste-kartica");
+            for (var i = 0; i < sveKartice.length; i++) {
+                var izvorniTekst = sveKartice[i].innerText || sveKartice[i].textContent;
+                // Pretvaramo tekst unutar kartice: mala slova + skidamo kvačice
+                var tekstBezKvacica = ukloniKvacice(izvorniTekst);
+                
+                if (tekstBezKvacica.indexOf(filter) > -1) {
+                    sveKartice[i].style.display = "";
+                } else {
+                    sveKartice[i].style.display = "none";
+                }
+            }
+
+            // 2. Pametno skrivanje cijelih sekcija ako unutar njih nema vidljivih kartica
+            var sekcije = document.getElementsByClassName("filtriraj-sekcija");
+            for (var j = 0; j < sekcije.length; j++) {
+                // Ako sekcija sadrži kartice, provjeri ima li ijedna vidljiva
+                var karticeUSekciji = sekcije[j].querySelectorAll(".zupa-kartica, .svetiste-kartica");
+                if (karticeUSekciji.length > 0) {
+                    var imaVidljivih = false;
+                    for (var k = 0; k < karticeUSekciji.length; k++) {
+                        if (karticeUSekciji[k].style.display === "") {
+                            imaVidljivih = true;
+                            break;
+                        }
+                    }
+                    if (imaVidljivih) {
+                        sekcije[j].style.display = "";
+                    } else {
+                        sekcije[j].style.display = "none";
+                    }
+                } else {
+                    // Za sekcije bez kartica (poput povijesti), filtriramo čisti tekst
+                    var tekstSekcije = ukloniKvacice(sekcije[j].innerText || sekcije[j].textContent);
+                    if (tekstSekcije.indexOf(filter) > -1) {
+                        sekcije[j].style.display = "";
+                    } else {
+                        sekcije[j].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+        // Upravljanje gumbom Na Vrh
+        window.onscroll = function() { upravljajGumbom() };
+
+        function upravljajGumbom() {
+            var gumb = document.getElementById("gumbNaVrh");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                gumb.style.display = "block";
+            } else {
+                gumb.style.display = "none";
+            }
+        }
+
+        function vratiNaVrh() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
