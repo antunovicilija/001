@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sveti Rok - Rokovo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #800020; /* Burgundska crvena za svečani ton */
+            margin-bottom: 5px;
+        }
+        .podnaslov {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        /* Stilovi za gumbe */
+        .gumb-stil {
+            background-color: #800020;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            margin: 10px 0;
+        }
+        .gumb-stil:hover {
+            background-color: #a31d37;
+        }
+
+        /* Kontejner s glatkom animacijom */
+        .sadrzaj-kontejner {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.6s ease-out, opacity 0.4s ease-out;
+        }
+
+        /* Klasa koja aktivira prikaz */
+        .sadrzaj-kontejner.otvoreno {
+            max-height: 2500px; /* Dovoljno prostora za sav tekst i kartu */
+            opacity: 1;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #800020;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #444;
+            margin-bottom: 5px;
+        }
+        .vrijeme {
+            font-weight: bold;
+            color: #800020;
+        }
+
+        /* VAŽNO: Karta mora imati fiksnu visinu da bi se vidjela */
+        .karta-okvir {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Glavni naslov i podnaslov -->
+    <h1 id="vrhStranice">Sveti Rok - Rokovo</h1>
+    <p class="podnaslov">Tradicionalna proslava i hodočašće u župi Kotor Varoš</p>
+
+    <!-- Gornji kontrolni gumb odmah ispod naslova -->
+    <button onclick="toggleSadrzaj()" id="gumbGore" class="gumb-stil">Pokaži sadržaj</button>
+
+    <!-- Glavni sklopivi sadržaj -->
+    <div id="mojSadrzaj" class="sadrzaj-kontejner">
+        
+        <h2>O Tradiciji i Svetkovini</h2>
+        <p>Proslava Svetog Roka (Rokovo) predstavlja jedan od najvažnijih vjerskih i kulturnih događaja za katolički puk kotorvaroškog kraja. Svake godine sredinom kolovoza, tisuće prognanih i iseljenih Kotorvarošana vraća se iz cijelog svijeta u svoju rodnu dolinu kako bi proslavili Veliku Gospu i sv. Roka.</p>
+        <p>Posebnu tradiciju čine grupe hodočasnika koje pješice, prelazeći preko obronaka Vlašića i kroz kanjon rijeke Ugra, pješače desetke kilometara noseći blagoslovljeni križ prema Rokovu groblju.</p>
+
+        <h2>Program Duhovnih Svečanosti</h2>
+        <p>Središnja liturgijska slavlja tradicionalno se održavaju na Rokovu groblju prema sljedećem rasporedu:</p>
+
+        <h3>15. kolovoza - Uočnica</h3>
+        <p><strong>Misa Uočnica:</strong> Svečano misno slavlje i molitveni program u predvečerje blagdana.</p>
+        <p class="vrijeme">Vrijeme: 18:00 sati</p>
+
+        <h3>16. kolovoza - Blagdan sv. Roka</h3>
+        <p><strong>Jutarnja Sveta Misa:</strong> Molitva za hodočasnike i rane posjetitelje Rokova groblja.</p>
+        <p class="vrijeme">Vrijeme: 09:00 sati</p>
+
+        <h3>16. kolovoza - Središnje slavlje</h3>
+        <p><strong>Svečana Pučka Misa:</strong> Središnje koncelebrirano misno slavlje koje predvode biskupi i domaći svećenici uz procesiju i blagoslov.</p>
+        <p class="vrijeme">Vrijeme: 11:00 sati</p>
+
+        <h2>Kulturni i Sportski Sadržaj</h2>
+        <p>Uz duhovni program, Rokovo je vrijeme ponovnog susreta, zajedništva i očuvanja tradicije kroz društvene aktivnosti:</p>
+        <ul>
+            <li><strong>Rokovski nogometni turniri:</strong> Tradicionalna sportska natjecanja koja se odigravaju na lokalnim igralištima.</li>
+            <li><strong>Zajedništvo na Rokovu groblju:</strong> Okupljanje vjernika iz cijele Europe, obiteljski susreti i njegovanje uspomene na kotorvaroške korijene.</li>
+            <li><strong>Sakrament svete Ispovijedi:</strong> Duhovna obnova i prilika za ispovijed osigurana je tijekom svih dana troodnevnice.</li>
+        </ul>
+
+        <h2>Lokacija i Dolazak</h2>
+        <p>Središnja hodočašća i svete mise održavaju se na povijesnom Rokovom groblju u Kotor Varošu. Ispod možete pogledati interaktivnu kartu lokacije:</p>
+
+        <!-- Interaktivna Google karta (Kotor Varoš centar/okolica) -->
+        <div class="karta-okvir">
+            <iframe 
+                src="https://google.com" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Donji gumb za zatvaranje (Vidi se samo kad je otvoreno) -->
+        <button onclick="toggleSadrzaj()" id="gumbDole" class="gumb-stil">Sakrij sadržaj</button>
+        
+        <footer>
+            © Župa Kotor Varoš - Sva prava pridržana. Okupljanje i tradicija kotorvaroške doline.
+        </footer>
+    </div>
+</div>
+
+<script>
+    function toggleSadrzaj() {
+        var sadrzaj = document.getElementById("mojSadrzaj");
+        var gumbGore = document.getElementById("gumbGore");
+
+        if (sadrzaj.classList.contains("otvoreno")) {
+            // Zatvaranje sadržaja
+            sadrzaj.classList.remove("otvoreno");
+            gumbGore.textContent = "Prikaži sadržaj";
+            
+            // Glatko vraća korisnika na vrh naslova nakon zatvaranja
+            document.getElementById("vrhStranice").scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Otvaranje sadržaja
+            sadrzaj.classList.add("otvoreno");
+            gumbGore.textContent = "Sakrij sadržaj";
+        }
+    }
+</script>
+
+</body>
+</html>
