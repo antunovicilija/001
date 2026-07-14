@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borovica - Svetište Preobraženja Gospodnjeg | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • TRANSFIGURATIO DOMINI</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">Međugorje</a></li>
+                <li><a href="#">Podmilačje</a></li>
+                <li><a href="#">Olovo</a></li>
+                <li><a href="#">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="#">Hrasno</a></li>
+                <li><a href="#">Kondžilo</a></li>
+                <li><a href="#">Drinske mučenice</a></li>
+                <li><a href="#">Humac</a></li>
+                <li><a href="#">Rama-Šćit</a></li>
+                <li><a href="#">Široki Brijeg</a></li>
+                <li><a href="#">Deževice (Kreševo)</a></li>
+                <li><a href="#">Gornja Tramošnica</a></li>
+                <li><a href="#" class="active">Borovica Vareš</a></li>
+                <li><a href="#">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>BOROVICA – PREOBRAŽENJE GOSPODNJE</h1>
+        <p>"Gospodine Isuse, koji si se preobrazio na gori Tabor, preobrazi naša srca i blagoslovi našu povijesnu Borovicu..."</p>
+        <div class="sacred-symbols">👑 ✝ ⛰️</div>
+    </header>
+
+    <div class="container">
+
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje svetog mjesta u Borovici</h2>
+            <p>Svetište Preobraženja Gospodnjeg u Borovici, smješteno visoko u vrletima i netaknutoj prirodi planinskoga dijela općine Vareš, jedno je od najčudesnijih i poviješću najranjenijih hodočasničkih mjesta u središnjoj Bosni. Borovica se nalazi u neposrednoj blizini srednjovjekovnoga kraljevskog grada Bobovca, stolne utvrde bosanskih kraljeva, te predstavlja živi spomenik opstanka, neuništive katoličke vjere i ponovnoga rađanja (uskrsnuća) posvećenoga puka na ovim prostorima.</p>
+            
+            <h3>Srednjovjekovni korijeni i proglašenje župe 1922. godine</h3>
+            <p>Povijest Borovice seže duboko u 14. i 15. stoljeće, kada je ovo mjesto služilo kao ljetnikovac i rudarsko središte pod izravnom zaštitom bosanskih vladara. Katolički puk ovoga kraja stoljećima je čuvao vjeru pod okriljem bliske sutješke i vareške franjevačke obitelji. Službeno osamostaljenje dogodilo se 1922. godine, kada je utemeljena župa Borovica, a nedugo zatim podignuta je i prelijepa župna crkva. Borovica je bila poznata po tome što je unatoč planinskoj izoliranosti imala iznimno živu i brojnu katoličku zajednicu, s duboko ukorijenjenim tradicijskim običajima.</p>
+            
+            <h3>Stravična kalvarija, palež i potpuno uništenje 1993. godine</h3>
+            <p>Najtamniju stranicu svoje povijesti Borovica je doživjela potkraj Domovinskog rata, u studenome 1993. godine. U teškim sukobima, selo je pretrpjelo potpunu katastrofu – sve obiteljske kuće i gospodarski objekti sustavno su spaljeni i opljačkani, cjelokupno katoličko stanovništvo protjerano je u izbjeglištvo, a velebna župna crkva minirana je i srušena do temelja. Borovica je doslovno izbrisana s lica zemlje. No, u srcima raseljenih Borovičana tinjao je žar ljubavi prema rodnome kraju koji nikakva vatra nije mogla ugasiti.</p>
+
+            <div class="quote-box">
+                "👑 SVJETLOST NA PLANINI: IAKO JE BOROVICA BILA PRETVORENA U ZGARIŠTE I PROGLAŠENA MRTVIM MJESTOM, VJERA NARODA JE PREOBRAZILA RUŠEVINE. NOVA JE CRKVA PODIGNUTA KAO SVJEDOK NEPOKORENOG DUHA I USKRSNUĆA BOSNE. 👑"
+            </div>
+
+            <h3>Teološki značaj i otajstvo Preobraženja</h3>
+            <p>Teološka bit ovoga svetišta savršeno se zrcali u njegovu patronu – Preobraženju Gospodnjem (Taboru). Baš kao što je Isus na gori Tabor pokazao svoje božansko lice i preobrazio se pred učenicima, tako je i Borovica, nakon prođene kalvarije i potpunoga mraka uništenja, doživjela svoje materijalno i duhovno preobraženje. Hodočasnici koji se uspinju u ove planinske visine dolaze kako bi pred licem Preobraženoga Krista potražili snagu za preobrazbu vlastitoga života, zacjeljivanje duhovnih rana te obnovu kršćanske nade i ustrajnosti.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I POKORA -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, planinski zavjeti i oblici pokore</h2>
+            <p>Hodočašće u planinsku Borovicu sačuvalo je izvornu snagu iskrene, žrtvene pokore pod vedrim nebom središnje Bosne:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">⛰️</div>
+                    <h4>Planinsko pokorničko pješačenje</h4>
+                    <p>Vjernici iz Vareša, Kaknja, Sutjeske i Zenice pješače strmim planinskim stazama prkoseći naporu.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🧎</div>
+                    <h4>Molitve i obilaženje oltara</h4>
+                    <p>Tradicionalni zavjetni običaj u kojemu hodočasnici u tišini i skrušenosti obilaze oko svetoga oltara u novoj crkvi.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Sakrament pomirenja na visinama</h4>
+                    <p>U tišini planinskoga zraka i šume, vjernici masovno pristupaju sakramentu svete ispovijedi, tražeći unutarnji mir.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Zavjetne svijeće za obnovu doma</h4>
+                    <p>Paljenje svijeća ispred Gospina lika i spomen-obilježja za zdravlje obitelji i daljnju obnovu rodnoga kraja.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🌍</div>
+                    <h4>Svebosanski susret iseljenog puka</h4>
+                    <p>Blagdan Preobraženja tradicionalni je dan kada se obnavljaju pokidane veze i slavi zajedništvo svih Borovičana u svijetu.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA BOROVICU. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Svetište u Borovici nudi jedinstven duhovni i povijesni obilazak u okruženju hercegovačko-bosanskih planina:</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Nova župna crkva Preobraženja Gospodnjeg</h3>
+                    <p>Izgrađena na uzvišenju s kojeg se pruža pogled na cijeli vareški kraj. Ova prelijepa nova crkva, podignuta iz pepela, unutrašnjim mirom i sakralnim uređenjem privlači hodočasnike na duboku osobnu molitvu i sabranost.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🕯️ II. Temelji stare crkve i spomen-obilježje</h3>
+                    <p>Mjesto sjećanja i molitve. Uz novu crkvu sačuvani su tragovi i spomen na stravični palež iz 1993. godine. Tu se nalazi monumentalni križ pred kojim vjernici pale svijeće za sve stradale Borovičane kroz povijest.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>👑 III. Blizina povijesnog kraljevskog Bobovca</h3>
+                    <p>Hodočasnici posjet Borovici tradicionalno spajaju s obilaskom obližnjeg Bobovca, stolnoga mjesta bosanskih kraljeva i kraljice Katarine, prepoznajući u cijelom ovom kraju kolijevku kršćanstva u Bosni.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: PASTORALNI RAD I ZAJEDNICA -->
+        <section class="section-card">
+            <h2>🕊️ 4. Župni život, planinski povratnici i čuvanje tradicije</h2>
+            <p>Župnu zajednicu u Borovici s ljubavlju i ustrajnošću vode biskupijski svećenici Vrhbosanske nadbiskupije.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Župni dom i prihvat hodočasnika:</strong> Suvremeni objekt podignut uz crkvu koji služi za prihvat vjernika pješaka, održavanje duhovnih obnova, obiteljskih susreta i smještaj svećenika.
+                </li>
+                <li>
+                    <strong>📿 Povezivanje s borovičkom dijasporom:</strong> Župa ulaže goleme napore u okupljanje i koordinaciju s raseljenim župljanima diljem Europe, koji nesebično podupiru daljnje uređenje svetišta i sela.
+                </li>
+                <li>
+                    <strong>🛡️ Očuvanje kulturne baštine:</strong> Svetište je čuvar izvornoga borovičkog identiteta. Tijekom velikog blagdana, planinski proplanci ponovno ožive uz zvukove tradicionalne pjesme i ponosno nošenje starih narodnih nošnji.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Središnji i najsvečaniji dio godine u Borovici vezan je uz kolovoz, kada planina oživi nezapamćenim sjajem:</p>
+
+            <div class="event-box">
+                <strong>📆 5. kolovoza: Uočnica blagdana Preobraženja Gospodnjeg</strong><br>
+                U večernjim satima započinje hodočasnički program uz molitvu krunice, prigodu za svetu ispovijed te svetu misu uočnicu pod zvjezdanim planinskim nebom.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 6. kolovoza: Svetkovina Preobraženja Gospodnjeg (Glavni patron)</strong><br>
+                Središnji i najveći hodočasnički dan u godini. Tisuće vjernika iz cijele Bosne, Hrvatske i dijaspore uspinju se u Borovicu. Svečana pučka sveta misa na vanjskom oltaru slavi se u 11:00 h, praćena tradicionalnim narodnim zajedništvom i pučkim veseljem.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Ako planirate posjetiti Svetište u Borovici, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Priprema za planinske uvjete:</strong> Borovica se nalazi na visokoj nadmorskoj visini gdje se vrijeme može brzo promijeniti. Čak i početkom kolovoza noći i rana jutra su iznimno svježa. Ponesite topliju odjeću i zaštitu od kiše.</li>
+                <li><strong>Oprez u prometu na planinskim cestama:</strong> Prilazni putevi iz smjera Vareša su planinski i zahtijevaju oprezniju vožnju, osobito na dan blagdana kada je frekvencija vozila i hodočasnika pješaka izrazito visoka.</li>
+                <li><strong>Podrška maloj povratničkoj župi:</strong> Borovica je župa koja opstaje zahvaljujući ljubavi svojih hodočasnika. Svojim dolaskom i dobrovoljnim prilozima izravno pomažete opstanak ove hrabre povratničke zajednice.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

@@ -3,6 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna - Katolička Svetišta i Duhovna Baština BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.3rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .address-box {
+            background: #f1f5f9;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--sacred-gold);
+            font-style: normal;
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p { text-align: center; margin-bottom: 1rem; }
+        .footer-symbols { font-size: 2rem; letter-spacing: 20px; color: var(--sacred-gold); }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • PRO DEO ET PATRIA • PAX ET BONUM</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Početna</a></li>
+                <li><a href="medugorje.html">Međugorje</a></li>
+                <li><a href="podmilacje.html">Podmilačje</a></li>
+                <li><a href="olovo.html">Olovo</a></li>
+                <li><a href="kotor-varos.html">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="hrasno.html">Hrasno</a></li>
+                <li><a href="kondzilo.html">Kondžilo.html</a></li>
+                <li><a href="drinske-mucenice.html">Drinske mučenice</a></li>
+                <li><a href="humac.html">Humac</a></li>
+                <li><a href="rama-scit.html">Rama-Šćit</a></li>
+                <li><a href="siroki-brijeg.html">Široki Brijeg</a></li>
+                <li><a href="dezevice-kresevo.html">Deževice (Kreševo)</a></li>
+                <li><a href="gornja-tramosnica.html">Gornja Tramošnica</a></li>
+                <li><a href="borovica-vares.html">Borovica Vareš</a></li>
+                <li><a href="stup-sarajevo.html">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>KATOLIČKA BAŠTINA BOSNE I HERCEGOVINE</h1>
+        <p>"Čuvari vjere, povijesti i djedovske grude kroz stoljeća kršćanske opstojnosti..."</p>
+        <div class="sacred-symbols">👑 ✝ 🕊️</div>
+Autor: Ilija Antunović |<br> Za kontakt na moj Facebook profil <a href="https://www.facebook.com/share/17tZPqv4U2/" target="_blank">klikni ovdje</a>
+    </div>
+<h3>info: Klikom na ime sela ili Zupe otvarate stranicu sa jos detaljnim opisom tog mjesta. za sada uradjeno:
+Modrica, Odzak, Potocani i Kotor Varos. Ostala mjesta su u izradi, listajte mjesta po Dekanatima i Zupama</h3>
+    <div class="container">
+    </header>
+ 
+        <!-- TRAŽENI MARIJANSKI/HODOČASNIČKI UVOD -->
+        <div class="quote-box">
+            📿 U NAVIGACIJI SU OPŠIRNO OPISANA SVETIŠTA U BOSNI I HERCEGOVINI 📿
+        </div>
+
+        <section class="section-card">
+            <h2>⛪ Monumentalni franjevački samostani Bosne Srebrene i Hercegovine</h2>
+            <p>Franjevci su kroz više od sedam stoljeća ostali ključni čuvari vjerskog, kulturnog i nacionalnog identiteta Hrvata katolika u Bosni i Hercegovini. Njihovi monumentalni samostani predstavljaju prave duhovne utvrde i riznice povijesnoga pamćenja.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏰 Franjevački samostan Duha Svetoga u Fojnici:</strong> Jedan od najstarijih i najvažnijih samostana, utemeljen u 14. stoljeću. Preživio je brojne požare i ratove, te čuva glasovitu <em>Ahdnamu</em> sultana Mehmeda II. Fatiha iz 1463. godine, kojom je franjevcima zajamčena sloboda djelovanja. Samostan posjeduje golemu knjižnicu s inkunabulama i vrijednu zbirku srednjovjekovnog oružja i crkvenog posuđa.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Fra Anđela Zvizdovića 37, 71220 Fojnica</div>
+                </li>
+                <li>
+                <li>
+                    <strong>🏰 Franjevački samostan Kraljeve Sutjeske:</strong> Smješten podno povijesnoga kraljevskog grada Bobovca, ovaj je samostan osnovan u 14. stoljeću i predstavlja kulturno središte središnje Bosne. Čuva neprocjenjivu zbirku inkunabula (knjiga tiskanih prije 1500. godine), stare bosanske matice te bogatu zbirku umjetničkih slika. Narod ovoga kraja i danas čuva spomen na posljednju bosansku kraljicu Katarinu Kosaču.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Kraljeve Sutjeske bb, 72244 Kraljeva Sutjeska</div>
+                </li>
+                <li>
+                    <strong>🏰 Franjevački samostan sv. Ivana Krstitelja u Gučoj Gori:</strong> Podignut u 19. stoljeću pokraj Travnika, ovaj samostan ima burnu povijest. Bio je kulturno središte i nadahnuće brojnim piscima, uključujući i Ivu Andrića. Teško je stradao i zapaljen u sukobima 1993. godine, ali je predanim radom franjevaca u potpunosti obnovljen.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Guča Gora bb, 72274 Guča Gora</div>
+                </li>
+                <li>
+                    <strong>🏰 Samostan Petrićevac u Banjoj Luci:</strong> Franjevački samostan posvećen sv. Anti Padovanskom, građen potkraj 19. stoljeća. Doživio je potpuno uništenje u lipnju 1995. godine kada su ga srpske snage minirale i zapalile, pri čemu je stradao i stariji redovnik. Samostan je ponovno izgrađen, a 2003. godine posjetio ga je papa Ivan Pavao II. i proglasio blaženim Ivana Merza.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Majke Terezije 6, 78000 Banja Luka</div>
+                </li>
+                <li>
+                    <strong>🏰 Franjevački samostan Plehan (Derventa):</strong> Svetište i samostan sv. Marka Evanđelista u Bosanskoj Posavini. Godine 1992. samostan je srušen do temelja s dvije tone eksploziva. Danas na Plehanu niče novi, moderni arhitektonski kompleks koji ponovno okuplja raseljeni posavski katolički puk i čuva vrijednu zbirku suvremene umjetnosti.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Plehan bb, 74400 Derventa</div>
+                </li>
+                <li>
+                    <strong>🏰 Samostan Tolisa (Orašje):</strong> Monumentalni samostan s crkvom sv. Filipa i Jakova, građen u 19. stoljeću trudom fra Martina Nedića. Crkva u Tolisi, zbog svojih golemih dimenzija, u narodu se s ponosom naziva "posavska katedrala" i preživjela je brojna granatiranja u obrambenom ratu devedesetih.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Vrata Bosne 2, 76272 Tolisa</div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section-card">
+            <h2>🏛️ Crkveni muzeji i povijesne riznice</h2>
+            <p>Unutar katoličkih institucija u Bosni i Hercegovini nalaze se neprocjenjivi muzejski postavi koji svjedoče o pismenosti, umjetnosti i višestoljetnom identitetu naroda.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🖼️ Muzej franjevačkog samostana u Livnu (Gorica):</strong> Muzej i galerija Gorica čuvaju iznimnu arheološku, etnografsku i numizmatičku zbirku zapadne Bosne. Posebno mjesto zauzima stalni likovni postav i zbirka slika glasovitog hrvatskog slikara Gabriela Jurkića koji je dio života proveo u ovome samostanu.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Gorička cesta 1, 80101 Livno</div>
+                </li>
+                <li>
+                    <strong>🖼️ Nadbiskupijski centar i riznica u Sarajevu:</strong> Smješten u sklopu Katedrale Srca Isusova i Vrhbosanske bogoslovije. Čuva dragocjeno liturgijsko posuđe, stare misnice, relikvijare te povijesne dokumente vezane uz prvog vrhbosanskog nadbiskupa slugu Božjega Josipa Stadlera.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Trg fra Grge Martića 2, 71000 Sarajevo</div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section-card">
+            <h2>📚 Katolička visokoškolska učilišta i teološki instituti</h2>
+            <p>Visoko obrazovanje i teološka misao imaju duboke korijene u Bosni i Hercegovini, a katolička veleučilišta i danas predstavljaju vrhunske odgojne i obrazovne ustanove.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏫 Katolički bogoslovni fakultet u Sarajevu (KBF):</strong> Nastavljač tradicije Vrhbosanske katoličke teologije koju je 1890. godine utemeljio nadbiskup Josip Stadler. Fakultet je punopravni član Sveučilišta u Sarajevu i obrazuje buduće svećenike, teologe i vjeroučitelje, promičući teološku znanost i ekumenski dijalog.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Josipa Stadlera 5, 71000 Sarajevo</div>
+                </li>
+                <li>
+                    <strong>🏫 Franjevačka teologija Sarajevo (Neđarići):</strong> Visokoškolska ustanova i ujedno bogoslovija Franjevačke provincije Bosne Srebrene. Njezini korijeni sežu u srednjovjekovna učilišta, a danas predstavlja ugledni teološki institut s bogatom knjižnicom, znanstvenim časopisom "Bosna Franciscana" i aktivnim kulturnim djelovanjem.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Aleja Bosne Srebrene 111, 71000 Sarajevo</div>
+                </li>
+                <li>
+                    <strong>🏫 Teološko-katehetski institut u Mostaru (TKIM):</strong> Visokoškolska ustanova utemeljena pri Mostarsko-duvanjskoj biskupiji, namijenjena obrazovanju laika, budućih vjeroučitelja i pastoralnih suradnika na području Hercegovine, usko surađujući sa Sveučilištem u Mostaru.
+                    <div class="address-box">📍 <strong>Adresa:</strong> Nadbiskupa Čule bb, 88000 Mostar</div>
+                </li>
+            </ul>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA POČETNU STRANICU. JAVI MI KADA SI SPREMAN ZA 3. DIO KOJI SADRŽI JASNO OZNAČENI PROSTOR ZA STRANU STRANICU I KRAJ STRANICE -->
+        <!-- ========================================================================= -->
+        <!--   MJEŠTO ZA DODAVANJE "BODY" IZ JEDNE DRUGE STRANICE (KOJU SMO RADILI)   -->
+        <!--   Ovdje možeš umetnuti sav sadržaj/kartice iz bilo koje druge stranice    -->
+        <!-- ========================================================================= -->
+        
+        <div id="dodatni-sadrzaj-ugradnja">
+            
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katolička Svjedočanstva i Baština Bosne i Hercegovine</title>
     <style>
         /* Stilovi prilagođeni viziji: Svijetlo lila i Zlatna boja */
@@ -341,8 +697,9 @@
             
             <h3>Pregled svetišta u Bosni i Hercegovini (Od lokalnih do općepoznatih)</h3>
 
-                       <h3>Temeljiti popis svetišta i vrijeme najvećih okupljanja </h3>
- info: Klikom na zlatni naslov otvarate interaktivnu stranicu tog svetista
+                       <h3>Temeljiti popis svetišta i vrijeme najvećih okupljanja</h3>
+ <h3>info: Klikom na ime sela ili Zupe otvarate stranicu sa jos detaljnim opisom tog mjesta. za sada uradjeno:
+Modrica, Odzak,Potocani i Kotor Varos. Ostala mjesta su u izradi, listajte mjesta po Dekanatima i Zupama</h3>
             <!-- ================= OPĆEPOZNATA I SVJETSKA SVETIŠTA ================= -->
             <div class="svetiste-kartica">
                 <span class="svetiste-rang">Svjetsko hodočasničko središte</span>
@@ -412,7 +769,7 @@
 <div class="neutralni-kontejner">
   <!-- Naslovi prate stil vaše stranice -->
   <h2>Sveti Rok - Rokovo</h2>
-  <h3>Tradicionalna proslava i hodočašće u župi Kotor Varoš</h3>
+  <h3><a href="https://antunovicilija.github.io/001/kotor-varos/rokovo.html" target="_blank">Tradicionalna proslava i hodočašće u župi Kotor Varoš</a></h3>
 
   <!-- Funkcija sakrij/prikaži radi potpuno neovisno -->
   <details class="neutralni-detalji">
@@ -2174,5 +2531,23 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
+</body>
+</html>
+
+            
+        </div>
+        
+        <!-- ========================================================================= -->
+        <!--                      KRAJ MJESTA ZA UGRADNJU STRANICE                     -->
+        <!-- ========================================================================= -->
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta i Crkvene Institucije u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Digitalna arhiva bosanskohercegovačke povijesne, kulturne i hodočasničke baštine.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
 </body>
 </html>

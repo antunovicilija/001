@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Široki Brijeg - Zavjetno Svetište Uznesenja BDM | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • REGINA IN COELUM ASSUMPTA</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">Međugorje</a></li>
+                <li><a href="#">Podmilačje</a></li>
+                <li><a href="#">Olovo</a></li>
+                <li><a href="#">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="#">Hrasno</a></li>
+                <li><a href="#">Kondžilo</a></li>
+                <li><a href="#">Drinske mučenice</a></li>
+                <li><a href="#">Humac</a></li>
+                <li><a href="#">Rama-Šćit</a></li>
+                <li><a href="#" class="active">Široki Brijeg</a></li>
+                <li><a href="#">Deževice (Kreševo)</a></li>
+                <li><a href="#">Gornja Tramošnica</a></li>
+                <li><a href="#">Borovica Vareš</a></li>
+                <li><a href="#">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>ŠIROKI BRIJEG – VELIKA GOSPA</h1>
+        <p>"Širokobriješka Majko, Kraljice u nebo uznesena, moli za svoj vjerni puk i čuvaj spomen na naše mučenike..."</p>
+        <div class="sacred-symbols">👑 ✝ 🕊️</div>
+    </header>
+
+    <div class="container">
+
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje Širokoga Brijega</h2>
+            <p>Zavjetno svetište Uznesenja Blažene Djevice Marije na Širokom Brijegu povijesna je utvrda vjere, pismenosti, kulture i opstanka zapadne Hercegovine. Podizanjem ovoga monumentalnog kamenog kompleksa na golom hercegovačkom brdu polovicom 19. stoljeća, započela je nova era prosvjetljenja i duhovnoga rasta katoličkoga puka. Široki Brijeg nije samo svetište; on je simbol hercegovačkoga identiteta, natopljen suzama pokore, ali i krvlju nevinih žrtava.</p>
+            
+            <h3>Dolazak franjevaca 1846. godine i gradnja crkve</h3>
+            <p>Povijest svetišta započinje 1846. godine kada su hercegovački franjevci, napuštajući dotadašnje sjedište u Kreševu, odlučili osnovati vlastiti samostan. Izbor je pao na Široki Brijeg. Kamen po kamen, uz neviđenu žrtvu i odricanje siromašnoga naroda, počela je nicati velika samostanska crkva. Današnja monumentalna crkva s dva tornja, građena od klesanog bjelokosnog kamena, dovršena je početkom 20. stoljeća pod vodstvom glasovitog fra Didaka Buntića, čovjeka koji je opismenio Hercegovinu i spasio tisuće djece od gladi tijekom Prvoga svjetskog rata.</p>
+            
+            <h3>Pokolj širokobrijeških franjevaca 1945. godine</h3>
+            <p>Najveću povijesnu ranu i kalvariju Široki Brijeg je doživio 7. veljače 1945. godine. Partizanske komunističke postrojbe umarširale su u samostan te u ratnom bezumlju zvjerski ubile 12 franjevaca koje su zatekle u zgradi. Odveli su ih do obližnjeg protuzrakoplovnog skloništa, tamo ih strijeljali, a potom zapalili njihova tijela. Ukupno je u Drugom svjetskom ratu i poraću mučenički stradalo 66 hercegovačkih franjevaca, od kojih je njih 30 bilo iz širokobriješkog samostana. Unatoč pokušajima komunističkoga režima da zabrani spomen na ovaj zločin, narod je desetljećima potajno dolazio moliti na njihovo stratište, prepoznajući u njima istinske kršćanske mučenike.</p>
+
+            <div class="quote-box">
+                "👑 USKRSNUĆE NA KAMENU: IAKO JE SAMOSTAN BIO NATOPLJEN KRVLJU NJEGOVIH ČUVARA, ŠIROKI BRIJEG JE OSTAO NEPOKOREN. GROB MUČENIKA POSTAO SE SREDIŠTE DUHOVNE SNAGE KOJA SVAKE GODINE PRIVLAČI STOTINE TISUĆA HODOČASNIKA. 👑"
+            </div>
+
+            <h3>Teološki značaj i marijanski štit</h3>
+            <p>Teološki značaj Širokoga Brijega duboko je povezan s otajstvom Marijina uznesenja na nebo (Velika Gospa). Hercegovina je kroz stoljeća prepoznala u Mariji svoju najsigurniju Odvjetnicu i Štit (Majku koja suosjeća s patnjama naroda). Na Široki Brijeg hodočasnici dolaze bosi kako bi pred milosnim Gospinim kipom predali svoje obiteljske križeve, pronalazeći u njezinu nebeskom proslavljenju utjehu i jamstvo da nijedna ljudska patnja ni nepravda nemaju zadnju riječ pred Božjim licem.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I POKORA -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, velika devetnica i oblici pokore</h2>
+            <p>Hodočašće na Široki Brijeg odlikuje se duboko ukorijenjenim pokorničkim duhom, molitvom krunice i masovnim odazivom vjernika sakramentalnom životu:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">🚶</div>
+                    <h4>Bosonogi hod iz cijele Hercegovine</h4>
+                    <p>Desetci tisuća vjernika pješače tijekom noći iz Mostara, Gruda, Posušja i u zoru stižu bosi na Brijeg.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">📿</div>
+                    <h4>Devetnica Velikoj Gospi</h4>
+                    <p>Od 6. do 14. kolovoza svake večeri nepregledno mnoštvo vjernika ispunjava prostrani trg ispred crkve slaveći misu.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Sakrament ispovijedi i pomirenja</h4>
+                    <p>Ispovijedanje pod stoljetnim stablima na Brijegu smatra se jednim od najvećih duhovnih plodova ovoga svetišta.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Molitva na grobu mučenika</h4>
+                    <p>Hodočasnici u neprekidnim redovima ulaze u crkvu kako bi dotaknuli grobnicu u kojoj počivaju pobijeni franjevci.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🤍</div>
+                    <h4>Zavjetne krunice i obiteljski post</h4>
+                    <p>Tradicionalni post o kruhu i vodi uoči samoga blagdana kao žrtva za zdravlje i duhovni mir u obitelji.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA ŠIROKI BRIJEG. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Svetište na Širokom Brijegu obuhvaća nekoliko povijesnih i sakralnih točaka koje svaki hodočasnik treba posjetiti radi potpunog duhovnog doživljaja:</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Crkva Uznesenja BDM i Gospin kip</h3>
+                    <p>Monumentalna kamena bazilika s dva tornja dominira cijelim krajem. Unutar crkve, iznad glavnoga oltara, nalazi se prelijepi kip Širokobriješke Gospe, izrađen od talijanskog mramora, ispred kojeg vjernici ostavljaju svoje molitve i zahvale.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🪦 II. Grobnica Širokobrijeških mučenika</h3>
+                    <p>Smještena s desne strane unutar crkve, ova grobnica čuva posmrtne ostatke pronađenih pobijenih franjevaca. To je mjesto duboke tišine, pijeteta i molitve za proglašenje ovih žrtava blaženima.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🛡️ III. Ratno sklonište - Mjesto stradanja</h3>
+                    <p>U neposrednoj blizini crkve nalazi se betonsko protuzrakoplovno sklonište u kojemu su franjevci strijeljani i zapaljeni. Prostor je uređen kao spomen-mjesto s trajnim plamenom i križem, gdje hodočasnici pale svijeće.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: KULTURNA I EDUKATIVNA BAŠTINA -->
+        <section class="section-card">
+            <h2>🕊️ 4. Samostanska riznica, prosvjeta i umjetničko blago</h2>
+            <p>Široki Brijeg je kroz povijest bio pokretač opismenjavanja i očuvanja kulturne baštine u Hercegovini.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>📚 Samostanska knjižnica i arhiv:</strong> Unatoč paljenju 1945. godine, franjevci su uspjeli obnoviti zbirku koja danas čuva tisuće starih i rijetkih knjiga, povijesnih dokumenata i matica neprocjenjive vrijednosti.
+                </li>
+                <li>
+                    <strong>🎨 Franjevačka galerija:</strong> Jedna od najznačajnijih institucija moderne i suvremene umjetnosti u regiji, smještena u sklopu samostanskog posjeda, s bogatim fondom slika i skulptura religiozne tematike.
+                </li>
+                <li>
+                    <strong>🌿 Trg i vanjski prostor za hodočasnike:</strong> Golemi plato ispred crkve, uokviren kamenim zidinama i stoljetnim stablima, pruža idealan zaklon za obiteljski odmor nakon dugog pješačenja.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Vrhunac duhovnoga života i hodočašća na Širokom Brijegu događa se tijekom veljače i kolovoza:</p>
+
+            <div class="event-box">
+                <strong>❄️ 7. veljače: Obljetnica ubojstva Širokobrijeških mučenica</strong><br>
+                Dan sjećanja na pobijene franjevce. Svake godine od 4. do 7. veljače održavaju se "Dani pobijenih hercegovačkih franjevaca", koji završavaju svečanom svetom misom zadušnicom koju pohode tisuće vjernika i crkvenih dostojanstvenika.
+            </div>
+
+            <div class="event-box">
+                <strong>📆 6. – 14. kolovoza: Devetnica Velikoj Gospi</strong><br>
+                Svake večeri program započinje molitvom krunice i ispovijedanjem od 17:00 h, nakon čega u 18:00 h slijedi zavjetna sveta misa. Trg ispred crkve svake večeri udomljuje preko 10.000 vjernika iz cijeloga svijeta.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 15. kolovoza: Svetkovina Uznesenja BDM (VELIKA GOSPA - Patron župe)</strong><br>
+                Središnji i najveći hodočasnički dan. Rijeke bosonogih hodočasnika pristižu na Brijeg od ranih jutarnjih sati. Svečana pučka sveta misa na otvorenom slavi se u 11:00 h uz sudjelovanje preko 40.000 vjernika, nakon čega slijedi tradicionalno pučko veselje.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Ako planirate posjetiti Zavjetno svetište na Širokom Brijegu, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Dolazak i regulacija prometa:</strong> Za vrijeme devetnice i samoga blagdana Velike Gospe, prilazne ceste prema Brijegu zatvorene su za automobile. Vozilo parkirajte u donjem dijelu grada i pješačite uzbrdo stazom prema crkvi.</li>
+                <li><strong>Priprema za tišinu i bonton:</strong> Grobnica mučenika unutar crkve i ratno sklonište mjesta su stroge tišine i pijeteta. Prilikom posjeta ovim lokacijama isključite mobilne uređaje i izbjegavajte razgovore kako ne biste ometali druge u molitvi.</li>
+                <li><strong>Hodočasnička solidarnost:</strong> Široki Brijeg pruža veliku logističku potporu hodočasnicima pješacima. Na nekoliko točaka oko samostana osigurana je pitka izvorska voda i medicinska pomoć u slučaju potrebe nakon dugog bosonogog hoda.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

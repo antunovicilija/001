@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Međugorje - Sveobuhvatni Hodočasnički Vodič | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNI KREIRANI PROSTORI --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • AVE MARIA</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="medugorje.html" class="active">Međugorje</a></li>
+                <li><a href="podmilacje.html">Podmilačje</a></li>
+                <li><a href="olovo.html">Olovo</a></li>
+                <li><a href="kotor-varos.html">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="hrasno.html">Hrasno</a></li>
+                <li><a href="kondzilo.html">Kondžilo.html</a></li>
+                <li><a href="drinske-mucenice.html">Drinske mučenice</a></li>
+                <li><a href="humac.html">Humac</a></li>
+                <li><a href="rama-scit.html">Rama-Šćit</a></li>
+                <li><a href="siroki-brijeg.html">Široki Brijeg</a></li>
+                <li><a href="dezevice-kresevo.html">Deževice (Kreševo)</a></li>
+                <li><a href="gornja-tramosnica.html">Gornja Tramošnica</a></li>
+                <li><a href="borovica-vares.html">Borovica Vareš</a></li>
+                <li><a href="stup-sarajevo">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>MEĐUGORJE</h1>
+        <p>"Draga djeco! Pozivam vas da budete mir tamo gdje živite i molite da mir zavlada u cijelom svijetu..."</p>
+        <div class="sacred-symbols">👑 ✝ 🕊️</div>
+<!-- Tekst autor ispod naslova -->
+    <div class="autor-info">
+        Autor: Ilija Antunović |<br> Za kontakt na moj Facebook profil <a href="https://www.facebook.com/share/17tZPqv4U2/" target="_blank">klikni ovdje</a>
+    </div>
+    </header>
+    
+    <div class="container">
+
+<!-- OVDJE ZAVRŠAVA 1. DIO KODA. SLJEDEĆI 2. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje ukazanja</h2>
+            <p>Sve do kasnoga proljeća 1981. godine, Međugorje je bilo izolirano, krševito i siromašno hercegovačko selo. Stanovništvo je preživljavalo mukotrpnim radom, uzgojem duhana i vinove loze, duboko ukorijenjeno u tradicionalnu katoličku vjeru koju su stoljećima, unatoč progonima, čuvali franjevci. Politički pritisak komunističkog režima tadašnje Jugoslavije bio je izrazito snažan, a iskazivanje vjere nalazilo se pod strogim nadzorom državnih tijela.</p>
+            
+            <h3>Dan koji je promijenio povijest: 24. lipnja 1981.</h3>
+            <p>U popodnevnim satima na blagdan sv. Ivana Krstitelja, mlade djevojke Ivanka Ivanković (15) i Mirjana Dragićević (16) šetale su podnožjem brda Crnica (danas poznatog kao Podbrdo). Na povratku prema kućama, Ivanka je uočila blještavu, svjetlosnu siluetu žene na brdu koja u naručju drži dijete. Prestrašene, djevojke su pobjegle u selo. Nešto kasnije, vratile su se na isto mjesto s Milkom Pavlović, Vickom Ivanković, Ivanom Dragićevićem i Ivanom Ivankovićem te su svi ponovno ugledali istu čudesnu pojavu.</p>
+            
+            <h3>Službeni početak: 25. lipnja 1981.</h3>
+            <p>Sljedećega dana, privučeni neobjašnjivom unutarnjom čežnjom, mještani i djeca ponovno odlaze na brdo. To je dan koji se službeno slavi kao obljetnica ukazanja jer se tada oblikovala stalna skupina od šestero vidjelica. Toga dana s njima nisu bili Milka Pavlović i Ivan Ivanković, već su došli Marija Pavlović (16) i maleni Jakov Čolo (10). Gospa im se tada obratila i predstavila riječima: <strong>"Ja sam Kraljica Mira"</strong>.</p>
+
+            <div class="quote-box">
+                "👑 DRAGA DJECO! JA SAM S VAMA SVE OVE GODINE KAKO BIH VAS POVELA NA PUT SPASENJA. VRATITE SE MOME SINU, VRATITE SE MOLITVI I POSTU. JA VAS ŽELIM VODITI PREMA PRAVOME MIRU KOJI SAMO BOG DAJE. 👑"
+            </div>
+
+            <h3>Komunistički progoni i uloga fra Slavka Barbarića i fra Joze Zovke</h3>
+            <p>Vijest o ukazanjima munjevito se proširila, a tisuće ljudi počele su hrliti u Međugorje. Tadašnja milicija i tajne službe (UDBA) odmah su reagirale progonima, ispitivanjima i blokadama brda. Vidjelice su proglašavane državnim neprijateljima, a hodočasnici su uhićivani. Župnik fra Jozo Zovko, koji je u početku bio sumnjičav, doživio je osobno obraćenje unutar crkve kada je čuo glas koji mu govori: 'Zaštiti djecu!'. Nakon toga je stao u njihovu obranu te ga je režim osudio na tri godine teške robije. Kasnije, ključnu ulogu u teološkom vođenju, organizaciji i duhovnom oblikovanju Međugorja preuzima pokojni <strong>fra Slavko Barbarić</strong>, čiji je nesebični rad postavio temelje suvremenog hodočasničkog pastorala.</p>
+        </section>
+
+        <!-- SEKCIJA 2: PET KAMENOVA -->
+        <section class="section-card">
+            <h2>📿 2. Duhovna poruka i "Pet kamenova" Međugorja</h2>
+            <p>Gospine poruke u Međugorju nisu donijele nove dogme, već su snažan i jasan podsjetnik na ono što je Crkva kroz stoljeća zanemarila. Teološka srž međugorskih poruka sažeta je u borbi protiv grijeha i zla u suvremenom svijetu. Poput Davida koji je s pet kamenčića pobijedio diva Golijata, hodočasnicima se nudi pet duhovnih oružja:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">📿</div>
+                    <h4>1. Krunica</h4>
+                    <p>Molitva srcem i svakodnevno proživljavanje Isusova života.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🍞</div>
+                    <h4>2. Post</h4>
+                    <p>Srijedom i petkom o kruhu i vodi za pročišćenje duha.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">📖</div>
+                    <h4>3. Biblija</h4>
+                    <p>Svakodnevno čitanje Svetog pisma na vidljivom mjestu u obitelji.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>4. Ispovijed</h4>
+                    <p>Mjesečna sveta ispovijed koja radikalno čisti srce od grijeha.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">⛪</div>
+                    <h4>5. Sveta Misa</h4>
+                    <p>Euharistija kao vrhunac kršćanskog života i susret sa živim Kristom.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Hodočašće u Međugorje zahtijeva sabranost i prolazak kroz tri ključne točke koje tvore jedinstvenu duhovnu cjelinu.</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Župna crkva sv. Jakova Starijeg</h3>
+                    <p>Projektirana i izgrađena daleko prije početka ukazanja (dovršena 1969. godine), crkva sv. Jakova, zaštitnika hodočasnika, namjerno je građena u velikim dimenzijama za tadašnje malo selo, što mnogi smatraju znakom providnosti.</p>
+                    <ul>
+                        <li><strong>Vanjski oltar:</strong> Izgrađen radi prihvata stotina tisuća vjernika u ljetnim mjesecima. Ovdje večernji program poprima oblik najveće otvorene katedrale na svijetu.</li>
+                        <li><strong>Ispovjedaonice:</strong> Međugorje je poznato kao "Ispovjedaonica svijeta". Redovi ispred 25 natkrivenih vanjskih ispovjedaonica protežu se kroz cijeli dan.</li>
+                        <li><strong>Kip Uskrslog Spasitelja:</strong> Brončani kip iz čijeg desnog koljena već godinama neprekidno kaplje tekućina kemijskog sastava identičnog ljudskim suzama.</li>
+                    </ul>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>👑 II. Podbrdo (Brdo Ukazanja)</h3>
+                    <p>Smješteno nekoliko kilometara od središta crkve, u zaseoku Bijakovići, Podbrdo predstavlja polazišnu točku međugorskog fenomena. Staza je potpuno prekrivena oštrim, hercegovačkim kamenom.</p>
+                    <ul>
+                        <li><strong>Uzlazna staza:</strong> Mnogi se hodočasnici ovdje penju potpuno bosi, prinoseći žrtvu za zdravlje obitelji ili obraćenje grešnika.</li>
+                        <li><strong>Brončani reljefi:</strong> Prikazuju Radosna i Žalosna otajstva krunice duž cijelog uspona.</li>
+                        <li><strong>Mramorni kip:</strong> Na samom vrhu stoji bijeli mramorni kip Kraljice Mira, dar hodočasnika iz Koreje.</li>
+                    </ul>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>⛰️ III. Križevac (Brdo Spasa)</h3>
+                    <p>Križevac je brdo visoko 520 metara koje zahtijeva ozbiljan fizički napor i duboku koncentraciju tijekom planinskog uspona.</p>
+                    <ul>
+                        <li><strong>Zavjetni križ:</strong> Župljani su 1934. godine na leđima iznijeli tone materijala kako bi podigli betonski križ visok 8,56 metara s relikvijama Isusova križa iz Rima.</li>
+                        <li><strong>Križni put:</strong> Uspon na Križevac tradicionalno je rezerviran za pobožnost Križnoga puta kroz hercegovački kamenjar.</li>
+                        <li><strong>Reljefi postaja:</strong> Postaje su označene umjetničkim brončanim reljefima talijanskog kipara Carmela Puzzola.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: KARITATIVNE USTANOVE -->
+        <section class="section-card">
+            <h2>🕊️ 4. Karitativne ustanove i mjesta milosrđa</h2>
+            <p>Plodovi Međugorja nisu samo molitve na brdima, već konkretna djela ljubavi prema bližnjemu i onima koje je društvo odbacilo.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Majčino Selo (Bijakovići):</strong> Ovo veliko karitativno naselje osnovano je tijekom Domovinskog rata kada je fra Slavko Barbarić počeo zbrinjavati djecu koja su ostala bez roditelja, ranjena ratom i obiteljskim tragedijama. Danas ustanova nudi vrhunsku njegu, smještaj i psihološku podršku djeci i samohranim majkama.
+                </li>
+                <li>
+                    <strong>🤝 Zajednica Cenacolo (Polje):</strong> Osnovana od strane sestre Elvire Petrozzi, ova zajednica udomljuje mlade ljude koji su pali u pakao ovisnosti (droga, kocka, alkohol). Život unutar zajednice ne koristi medicinsku terapiju, već se temelji isključivo na dvije poluge: <em>rad i molitva (Ora et labora)</em>.
+                </li>
+                <li>
+                    <strong>🕊️ Domus Pacis (Kuća Mira):</strong> Smještena na rubu župnoga posjeda, ova molitvena kuća oaza je tišine. U njoj se tijekom cijele godine održavaju specifični trodnevni ili sedmodnevni seminari posta, molitve i šutnje koje vode međugorski franjevci.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Međugorje živi intenzivnim duhovnim ritmom tijekom cijele godine. Ako planirate hodočašće, ovo su ključni datumi velikih svjetskih manifestacija:</p>
+
+            <div class="event-box">
+                <strong>📆 Ožujak (Promjenjiv datum): Međunarodni seminar za voditelje hodočašća</strong><br>
+                Okuplja stotine svećenika, teologa i organizatora hodočašća iz cijelog svijeta radi teološko-pastoralne koordinacije rada međugorskih udruga.
+            </div>
+
+            <div class="event-box">
+                <strong>🕊️ 24. lipnja: Hodnja mira (Humac - Međugorje)</strong><br>
+                Započela je ratne 1992. godine kao prosvjed protiv rata i vapaj za mirom. Hodočasnici polaze u ranim jutarnjim satima (oko 06:00 h) ispred Franjevačkog samostana na Humcu (Ljubuški) te pješače 11 kilometara do crkve u Međugorju.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 25. lipnja: Središnja proslava Obljetnice Ukazanja</strong><br>
+                Najposjećeniji dan u godini. Desetci tisuća lokalnih vjernika pješače cijelu noć iz svih krajeva BiH i Hrvatske, pridružujući se stotinama tisuća stranih hodočasnika. Svete mise služe se svakih sat vremena na više od dvadeset jezika.
+            </div>
+
+            <div class="event-box">
+                <strong>⚔️ 25. srpnja: Blagdan svetog Jakova Apostola</strong><br>
+                Proslava patrona i nebeskog zaštitnika međugorske župe. Tradicionalna procesija s kipom sv. Jakova kreće iz crkve prema starom oltaru u obližnjem Gaju gdje se održava svečana pučka sveta misa.
+            </div>
+
+            <div class="event-box">
+                <strong>🔥 1. – 6. kolovoza: MLADIFEST (Međunarodni festival mladih)</strong><br>
+                Jedinstven duhovni susret u svijetu. Više od 50.000 mladih i preko 500 svećenika iz cijelog svijeta tjedan dana borave u Međugorju. Program uključuje ranojutarnje kateheze, svjedočanstva, procesije sa zastavama država te večernja klanjanja u potpunoj tišini.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 15. kolovoza: Velika Gospa (Uznesenje BDM)</strong><br>
+                Tradicionalni marijanski blagdan obilježen dolaskom rijeka domaćih hodočasnika koji u Međugorje pristižu bosi u ranim jutarnjim satima iz okolnih hercegovačkih i dalmatinskih mjesta.
+            </div>
+
+            <div class="event-box">
+                <strong>✝️ Rujan (Prva nedjelja nakon Male Gospe): Misa na Križevcu</strong><br>
+                Slavi se blagdan Uzvišenja Svetog Križa. Cijelu noć uoči nedjelje, tisuće mladih provode na stijenama Križevca pod otvorenim nebom u pjesmi i molitvi, čekajući svečanu svetu misu koja se služi u 11:00 h ujutro podno masivnog betonskog križa.
+            </div>
+
+            <div class="event-box">
+                <strong>🌌 31. prosinca: Duhovni doček Nove godine</strong><br>
+                Umjesto klasičnih proslava, Međugorje nudi molitveno bdijenje koje počinje u 22:00 h, nakon čega slijedi svečana ponoćna sveta misa. Zbog golemog broja mladih hodočasnika, postavlja se veliki grijani šator iza crkve te se vrši video prijenos unutar cijelog svetišta.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Kako bi vaše hodočašće u Međugorje dalo prave duhovne plodove, predlažemo sljedeći raspored i pravila ponašanja:</p>
+            <ul>
+                <li><strong>Priprema za uspon:</strong> Za Podbrdo i Križevac obavezno nosite čvrstu obuću (sportske tenisice ili planinarske cipele). Kamenje je sklisko i oštro. Ako se odlučite penjati bosi, činite to polako i sabrano.</li>
+                <li><strong>Poštivanje sakralnog prostora:</strong> Unutar crkvenog dvorišta i na brdima izbjegavajte glasne razgovore, korištenje mobitela i neprikladnu odjeću (ramena i koljena moraju biti pokriveni).</li>
+                <li><strong>Sudjelovanje u večernjem programu:</strong> Večernji molitveni program srce je Međugorja. Započinje molitvom radosnih i žalosnih otajstava krunice, nastavlja se međunarodnom svetom misom, a završava molitvom za ozdravljenje duše i tijela. Ne propustite večernje klanjanje Presvetom Oltarskom Sakramentu utorkom, četvrtkom i subotom.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

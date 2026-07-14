@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podmilačje - Svetište svetog Ive Krstitelja | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • ECCE AGNUS DEI</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="medugorje.html">Međugorje</a></li>
+                <li><a href="podmilacje.html" class="active">Podmilačje</a></li>
+                <li><a href="olovo.html">Olovo</a></li>
+                <li><a href="kotor-varos.html">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="hrasno.html">Hrasno</a></li>
+                <li><a href="kondzilo.html">Kondžilo.html</a></li>
+                <li><a href="drinske-mucenice.html">Drinske mučenice</a></li>
+                <li><a href="humac.html">Humac</a></li>
+                <li><a href="rama-scit.html">Rama-Šćit</a></li>
+                <li><a href="siroki-brijeg.html">Široki Brijeg</a></li>
+                <li><a href="dezevice-kresevo.html">Deževice (Kreševo)</a></li>
+                <li><a href="gornja-tramosnica.html">Gornja Tramošnica</a></li>
+                <li><a href="borovica-vares.html">Borovica Vareš</a></li>
+                <li><a href="stup-sarajevo.html">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>PODMILAČJE</h1>
+        <p>"Zaista, kažem vam, između rođenih od žena ne usta veći od Ivana Krstitelja..."</p>
+        <div class="sacred-symbols"> ✝ 🌊</div>
+   <div class="container">
+Autor: Ilija Antunović |<br> Za kontakt na moj Facebook profil <a href="https://www.facebook.com/share/17tZPqv4U2/" target="_blank">klikni ovdje</a>
+    </div>
+    </header>
+
+ 
+    <div class="container">
+<!-- OVDJE ZAVRŠAVA 1. DIO KODA ZA PODMILAČJE. SLJEDEĆI 2. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>✝ 1. Detaljna povijest i teološko značenje svetog Ive</h2>
+            <p>Svetište svetog Ive Krstitelja u Podmilačju, smješteno u slikovitom kanjonu rijeke Vrbas pokraj kraljevskoga grada Jajca, jedno je od najstarijih, najvjernijih i duhovno najsnažnijih molitvenih mjesta u cijeloj Bosni i Hercegovini. Dok su mnoga druga svetišta u zemlji marijanska, Podmilačje stoljećima ponosno stoji pod nebeskim zagovorom Isusova preteče – svetoga Ivana Krstitelja, kojega ovdašnji puk od milja i s dubokim poštovanjem naziva sveti Ivo.</p>
+            
+            <h3>Čudesno preživljavanje stare crkvice iz 1416. godine</h3>
+            <p>Povijest ovoga svetog tla započinje u dalekom srednjem vijeku, točnije oko 1416. godine, kada je podignuta mala gotička crkvica sv. Ive. Ona predstavlja jedinstven povijesni i graditeljski fenomen: to je jedina katolička crkva u cijeloj Bosni koja je u potpunosti preživjela višestoljetnu osmansku vladavinu, razaranja i paleže. Prema pučkoj predaji i legendi koju hodočasnici i danas prepričavaju, crkvica je u jednoj noći "sama od sebe" prešla s lijeve na desnu obalu Vrbasa jer su Osmanlije u nju uvodili stoku. Ta priča, iako simbolična, zorno prikazuje vjeru naroda u njezinu nedodirljivost i svetost.</p>
+            
+            <h3>Izgradnja velike crkve i njezino potpuno uništenje 1992.</h3>
+            <p>Početkom 20. stoljeća (1910. godine), zbog golemoga priljeva hodočasnika, mala gotička crkvica proširena je dogradnjom velike, prostrane neogotičke crkve u koju je stara kapelica ugrađena kao samo svetište. Međutim, tijekom Domovinskog rata, u ožujku 1993. godine, srpske su snage minirale cijeli kompleks. Nova crkva srušena je do temelja, a stara gotička crkvica pretvorena je u hrpu kamenja. To je bio stravičan udarac za sve vjernike, no duh svetoga Ive nije ugašen.</p>
+
+            <div class="quote-box">
+                "✝ IZ RUŠEVINA DO NOVOGA SJAJA: SVETI IVO SE VRATIO NA OBALE VRBASA. KAMEN PO KAMEN, STARA JE CRKVICA REKONSTRUIRANA U ORIGINALNOM GOTIČKOM OBLIKU, SVJEDOČEĆI O NEPOGREŠIVOJ POBJEDI VJERE NAD RAZARANJEM. ✝"
+            </div>
+
+            <h3>Bosanski Lourdes i interreligijski fenomen pomirenja</h3>
+            <p>Podmilačje je u cijeloj Europi poznato kao "bosanski Lourdes" zbog nebrojenih svjedočanstava o čudesnim ozdravljenjima bolesnih, nepokretnih i duhovno napaćenih osoba. Ono što ovo svetište čini jedinstvenim na globalnoj razini jest njegov međureligijski karakter. Svetom Ivi stoljećima, osim katolika, s jednakim žarom i bosi hodočaste i pravoslavni kršćani te muslimani. Svi oni u tišini hercegovačkih i bosanskih planina traže utjehu, zdravlje i milost, prepoznajući u svetom Ivi pravednika i iscjelitelja koji ne dijeli ljude po narodnosti ili vjeri.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNA OBLIČJA I POKORA -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, zavjeti i oblici pokore</h2>
+            <p>Hodočašće u Podmilačje od pamtivijeka je snažno obilježeno duhom pokore, žrtve i vapaja za ozdravljenjem. Za razliku od modernih turističkih hodočašća, dolazak k svetom Ivi zadržao je strogu arhaičnu formu iskrene kršćanske askeze:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">🚶</div>
+                    <h4>Pješačenje i bosonogo hodočašće</h4>
+                    <p>Tisuće vjernika danima pješače kroz šumske puteve i planinske prijevoje, često potpuno bosi.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Obilazak na koljenima</h4>
+                    <p>Tradicionalni zavjet u kojem vjernici na koljenima obilaze oko oltara stare crkvice sv. Ive.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🌊</div>
+                    <h4>Pranje na izvoru mrtvaca</h4>
+                    <p>Duhovno i tjelesno očišćenje vodom s čudotvornog izvora podno samoga svetišta.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🔥</div>
+                    <h4>Zavjetne svijeće i post</h4>
+                    <p>Paljenje masivnih voštanih svijeća te strogi post uoči samoga blagdana Ivanjdana.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕊️</div>
+                    <h4>Duhovno oslobođenje</h4>
+                    <p>Molitva za otklanjanje teških duhovnih tereta, obiteljskih prokletstava i unutarnjih nemira.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA PODMILAČJE. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Svetište u Podmilačju prostire se na prostranom prirodnom amfiteatru uz rijeku Vrbas, a hodočasnik treba proći kroz nekoliko ključnih sakralnih točaka.</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Obnovljena stara crkvica sv. Ive</h3>
+                    <p>Srce cijeloga svetišta. Nakon rata, kamen po kamen izvađen je iz ruševina te je stara gotička crkvica minuciozno rekonstruirana u svom izvornom obliku iz 15. stoljeća. Ona je glavno mjesto tihe molitve i obilaženja na koljenima.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>📐 II. Nova monumentalna crkva i vanjski oltar</h3>
+                    <p>Izgrađena prema projektu glasovitog arhitekta akademika Zlatka Ugljena, nova crkva predstavlja spoj moderne arhitekture i duboke sakralne simbolike. Njezin se krov uzdiže poput ruku sklopljenih na molitvu, a golemi vanjski amfiteatar može primiti preko 100.000 hodočasnika.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🌊 III. Čudotvorni izvor sv. Ive</h3>
+                    <p>Podno brežuljka, u neposrednoj blizini crkve, nalazi se izvor pitke vode koji nikada ne presušuje. Narod stoljećima vjeruje u ljekovitost ove vode. Hodočasnici ovdje piju, umivaju se i u bočicama nose vodu svojim kućama za blagoslov i zdravlje bolesnih članova obitelji.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: KARITATIVNE USTANOVE I PASTORAL -->
+        <section class="section-card">
+            <h2>🕊️ 4. Pastoralni centar, bolesnici i duhovna skrb</h2>
+            <p>Podmilačje je mjesto gdje se posebna pažnja posvećuje onima koji najviše pate – bolesnima i nemoćnima.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏥 Župni i pastoralni centar:</strong> Moderni objekt izgrađen uz svetište koji služi za prihvat hodočasnika, duhovne obnove, teološke seminare i smještaj svećenika koji dolaze ispovijedati tijekom velikih blagdana.
+                </li>
+                <li>
+                    <strong>♿ Blagoslov bolesnika i molitve za ozdravljenje:</strong> Tijekom glavnih hodočasničkih dana, pastoralno osoblje i franjevci organiziraju posebne, pojedinačne i skupne molitve s polaganjem ruku na bolesnike. To su najemotivniji trenuci u Podmilačju, praćeni suzama i dubokom vjerom u Isusovo i Ivanovo iscjeljenje.
+                </li>
+                <li>
+                    <strong>🌲 Molitveni prostor na otvorenom:</strong> Cijeli krug oko svetišta uokviren je stazama za šetnju, meditaciju i obavljanje pučkih pobožnosti u dubokoj tišini bosanskih šuma koje okružuju rijeku Vrbas.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Iako svetište privlači posjetitelje tijekom cijele godine, vrhunac svih zbivanja događa se potkraj lipnja, kada Podmilačje postaje duhovno središte regije:</p>
+
+            <div class="event-box">
+                <strong>📆 Lipanj (Svaka nedjelja uoči Ivanjdana): Hodočašća župa Jajačkog dekana</strong><br>
+                Lokalni vjernici iz okolnih mjesta i sela organizirano pristižu pješice u svetište kao uvod u veliku proslavu patrona.
+            </div>
+
+            <div class="event-box">
+                <strong>🕊️ 23. lipnja: Uočnica blagdana (Otvaranje hodočašća)</strong><br>
+                U popodnevnim satima (oko 16:00 h) kreće veličanstvena procesija s čudotvornim kipom svetoga Ive iz stare crkvice na vanjski oltar. Slijedi sveta misa i otvaranje proslave, nakon čega se služi posebna misa za bolesnike. Cijelu noć prostor oko svetišta svijetli od tisuća svijeća i logorskih vatri uz koje hodočasnici bdiju i mole.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 24. lipnja: Svetkovina Rođenja sv. Ivana Krstitelja (Ivanjdan)</strong><br>
+                Središnji hodočasnički dan. U ranim jutarnjim satima rijeke ljudi slijevaju se s okolnih planina u kanjon Vrbasa. Središnja svečana pučka sveta misa s molitvama za bolesnike održava se u 11:00 h, a predvode je najviši crkveni dostojanstvenici uz sudjelovanje preko 100.000 vjernika svih konfesija.
+            </div>
+
+            <div class="event-box">
+                <strong>⚔️ 29. kolovoza: Glavosjek svetog Ivana Krstitelja (Ivandand rjesni)</strong><br>
+                Drugi po važnosti blagdan u svetištu, kojim se obilježava mučenička smrt i odrubljivanje glave svetoga Ivana Krstitelja. Ovaj blagdan okuplja uglavnom domaće hodočasnike iz Bosne u tradicionalnoj, intimnijoj molitvenoj atmosferi.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Kako bi vaše hodočašće u Podmilačje proteklo u miru i duhovnoj koristi, imajte na umu sljedeće savjete:</p>
+            <ul>
+                <li><strong>Prometna i pješačka sigurnost:</strong> Tijekom 23. i 24. lipnja magistralna cesta M-16 (Jajce - Banja Luka) iznimno je opterećena pješacima. Ako pješačite, obavezno nosite reflektirajuće prsluke i krećite se u koloni uz rub ceste.</li>
+                <li><strong>Priprema za vremenske uvjete:</strong> Kanjon Vrbasa poznat je po naglim promjenama vremena – dani mogu biti izrazito vrući, dok su noći uz rijeku iznimno hladne i vlažne. Ponesite toplu odjeću za noćno bdijenje i zaštitu od kiše.</li>
+                <li><strong>Priprema za zavjetne pobožnosti:</strong> Ako planirate obilaziti staru crkvicu na koljenima, preporučuje se ponijeti mekane štitnike za koljena ili manji jastučić, budući da je pod oko oltara od tvrdoga povijesnog kamena.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 🌊</div>
+    </footer>
+
+</body>
+</html>

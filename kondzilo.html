@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kondžilo - Svetište Gospe Kondžilske (Komušina) | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • REGINA USORAE</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">Međugorje</a></li>
+                <li><a href="#">Podmilačje</a></li>
+                <li><a href="#">Olovo</a></li>
+                <li><a href="#">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="#">Hrasno</a></li>
+                <li><a href="#" class="active">Kondžilo</a></li>
+                <li><a href="#">Drinske mučenice</a></li>
+                <li><a href="#">Humac</a></li>
+                <li><a href="#">Rama-Šćit</a></li>
+                <li><a href="#">Široki Brijeg</a></li>
+                <li><a href="#">Deževice (Kreševo)</a></li>
+                <li><a href="#">Gornja Tramošnica</a></li>
+                <li><a href="#">Borovica Vareš</a></li>
+                <li><a href="#">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>KONDŽILO – KOMUŠINA</h1>
+        <p>"Gospo Kondžilska, odvjetnice naše prošlosti i nado naše budućnosti, moli za naš napaćeni puk..."</p>
+        <div class="sacred-symbols">👑 ✝ 🌲</div>
+    </header>
+
+    <div class="container">
+
+<!-- OVDJE ZAVRŠAVA 1. DIO KODA ZA KONDŽILO. SLJEDEĆI 2. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje Gospe Kondžilske</h2>
+            <p>Svetište Gospe Kondžilske u Komušini, smješteno u brežuljkastom i poviješću bogatom krajoliku usorskoga kraja kod Teslića, jedno je od najstarijih, najvjernijih i duhovno najznačajnijih marijanskih molitvenih mjesta Vrhbosanske nadbiskupije. Povijest ovoga svetog tla svjedočanstvo je duboke privrženosti bosanskih Hrvata Blaženoj Djevici Mariji, koja je kroz mnoga stoljeća ratova, progonstava i društvenih previranja ostala trajna tješiteljica i odvjetnica ovdašnjega napaćenog naroda.</p>
+            
+            <h3>Čudesno pronalaženje slike i povijest župe</h3>
+            <p>Početak štovanja Gospe Kondžilske neraskidivo je vezan uz njezinu čudotvornu sliku, čije pronalaženje seže u daleku prošlost, vjerojatno potkraj 16. ili početkom 17. stoljeća. Prema čvrstoj i živoj narodnoj predaji, slika je pronađena u grmlju na brdu Kondžilo, kamo je prenesena iz neke od porušenih srednjovjekovnih crkava. Kada su je vjernici pokušali prenijeti u župnu crkvu u Komušini, volovi koji su vukli kola jednostavno su stali na pola puta i nisu se htjeli pomaknuti sve dok narod nije obećao da će sliku svake godine na Veliku Gospu u svečanoj procesiji vraćati na brdo Kondžilo. Tako je rođen stoljetni zavjet koji traje i danas.</p>
+            
+            <h3>Stradanja, progonstvo i čudesno preživljavanje Gospina lika</h3>
+            <p>Tijekom teške povijesti 20. stoljeća, napose u Domovinskom ratu 1992. godine, župa Komušina doživjela je potpunu kalvariju. Cjelokupno hrvatsko stanovništvo protjerano je sa svojih ognjišta, župna crkva minirana je i srušena do temelja, a okolna sela spaljena. Međutim, čudotvorna slika spašena je zahvaljujući hrabrosti vjernika i svećenika te je tijekom godina progonstva čuvana u Splitu i Zagrebu, gdje je i dalje okupljala prognane Komušance. Gospina slika postala je simbol nepokorena duha, a njezin trijumfalni povratak u oslobođenu i obnovljenu Komušinu 1999. godine označio je početak novoga života i povratka naroda rodnoj grudi.</p>
+
+            <div class="quote-box">
+                "👑 ČUVARICA USORSKOGA KRAJA: IAKO PROTJERANA ZAJEDNO SA SVOJIM NARODOM, GOSPA KONDŽILSKA SE VRATILA NA SVOJ TRON, POKAZUJUĆI DA SE VJERA JEDNOGA NARODA NE MOŽE UNIŠTITI ZAKONOM SILE NITI RATNIM RAZARANJEM. 👑"
+            </div>
+
+            <h3>Teološki značaj i nadošlo zajedništvo</h3>
+            <p>Teološko značenje svetišta u Komušini očituje se kroz Marijino majčinstvo, zaštitu i neprekinuti hod s Crkvom u patnji. Kondžilo je mjesto gdje se na otvorenome, usred tišine bosanskih šuma, doživljava duboki susret s Bogom kroz sakramente. Gospa Kondžilska prepoznata je kao odvjetnica i kraljica obitelji, koja okuplja raspršene članove zajednice, liječi duhovne rane nanesene nepravdom i progonom te ulijeva kršćansku nadu u trajni opstanak na djedovskim ognjištima.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I ZAVJETI -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, tradicionalni zavjeti i oblici pokore</h2>
+            <p>Hodočašće Gospi u Komušini i na brdo Kondžilo odlikuje se strogim tradicijskim oblicima pokore, dugotrajnim molitvama i veličanstvenim procesijama:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">🚶</div>
+                    <h4>Veličanstvena procesija sa slikom</h4>
+                    <p>Hodočasnici na rukama nose čudotvornu sliku od župne crkve u Komušini uzbrdo do kapele na Kondžilu, pješačeći nekoliko kilometara u molitvi.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🧎</div>
+                    <h4>Molitve i obilaženje kapele</h4>
+                    <p>Vjernici tradicionalno na koljenima obilaze oko kapele na vrhu Kondžila, uzdižući svoje prošnje i zahvale Majci Božjoj.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Masovna ispovijed na otvorenome</h4>
+                    <p>Desetci svećenika ispovijedaju tisuće vjernika na brežuljcima Kondžila, pružajući milost potpunog duhovnog pomirenja.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Zavjetne svijeće i post uoči blagdana</h4>
+                    <p>Paljenje velikih voštanih svijeća te strogi post i nemrs uoči uočnice Velike Gospe za blagoslov obitelji.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🌍</div>
+                    <h4>Dan susreta domovinske i raseljene Bosne</h4>
+                    <p>Kondžilo je središnje mjesto susreta tisuća iseljenih Hrvata koji svakoga kolovoza dolaze obnoviti svoje duhovne i obiteljske korijene.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA KONDŽILO. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Svetište u Komušini i na Kondžilu obuhvaća dva glavna sakralna prostora povezana povijesnim i hodočasničkim putem.</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Župna crkva Uznesenja BDM u Komušini</h3>
+                    <p>Potpuno obnovljena i moderno uređena crkva u samom središtu župe. Ona je polazište veličanstvene procesije i mjesto gdje se čudotvorna Gospina slika čuva tijekom cijele godine u posebno izgrađenoj zavjetnoj kapeli.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>👑 II. Brdo Kondžilo i hodočasnička kapela</h3>
+                    <p>Sveto brdo i vrhunac hodočašća, smješteno nekoliko kilometara iznad Komušine. Na prostranom proplanku okruženom šumom nalazi se kapela na otvorenome, koja na blagdan Velike Gospe postaje odredište tisuća vjernika.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🌲 III. Put krunice i Križni put</h3>
+                    <p>Hodočasnički put koji vodi od crkve u Komušini do vrha Kondžila. Duž ovoga brdskog puta vjernici mole krunicu i razmatraju postaje Križnoga puta, noseći svoje životne terete kao žrtvu zahvalnicu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: PASTORALNI RAD I DUHOVNA SKRB -->
+        <section class="section-card">
+            <h2>🕊️ 4. Pastoralni život, hodočasnici i čuvari svetišta</h2>
+            <p>Svetištem upravljaju biskupijski svećenici Vrhbosanske nadbiskupije koji neumorno rade na duhovnom povezivanju domovinske i raseljene župne zajednice.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Hodočasnički dom i prihvatni centar:</strong> Izgrađen uz župnu crkvu u Komušini, pruža prostor za odmor, duhovne razgovore, kateheze i sakrament svete ispovijedi hodočasnicima koji dolaze organiziranim autobusima.
+                </li>
+                <li>
+                    <strong>📿 Nadbiskupijsko hodočašće mladih:</strong> Kondžilo je već desetljećima službeno mjesto okupljanja katoličke mladeži iz cijele Vrhbosanske nadbiskupije, koja u svibnju ovdje donosi svoju mladost, pjesmu i molitvu.
+                </li>
+                <li>
+                    <strong>🛡️ Očuvanje usorske kulturne baštine:</strong> Svetište s ponosom podupire rad lokalnih kulturnih društava. Tijekom velikih blagdana, Kondžilo zablista u bojama tradicionalnih usorskih narodnih nošnji i odjekuje izvornim crkvenim pjesmama.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Svetište u Komušini živi intenzivnim hodočasničkim ritmom, s dva velika godišnja vrhunca:</p>
+
+            <div class="event-box">
+                <strong>📆 Zadnja subota u svibnju: Nadbiskupijsko hodočašće mladih</strong><br>
+                Tisuće mladih iz cijele Bosne i Hercegovine okupljaju se u Komušini, odakle u procesiji nose sliku na Kondžilo, gdje se slavi svečana sveta misa za mladež, praćena duhovnim programom i svjedočanstvima.
+            </div>
+
+            <div class="event-box">
+                <strong>🕊️ 14. kolovoza: Uočnica blagdana Velike Gospe</strong><br>
+                Započinje službena proslava patrona župe. U kasnim popodnevnim satima slavi se sveta misa uočnica, nakon koje slijedi procesija sa svijećama i Gospinom slikom oko župne crkve te cjelonoćno molitveno bdijenje.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 15. kolovoza: Svetkovina Uznesenja BDM (Velika Gospa na Kondžilu)</strong><br>
+                Središnji i najveći hodočasnički dan u godini. Rano ujutro kreće veličanstvena procesija s čudotvornom slikom od crkve u Komušini do brda Kondžilo. Svečana pučka sveta misa na vanjskom oltaru Kondžila slavi se u 11:00 h, uz sudjelovanje preko 20.000 vjernika, biskupa i brojnih svećenika. Nakon mise slika se svečano vraća u crkvu.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Ako planirate hodočastiti Gospi Kondžilskoj, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Priprema za hodočasnički hod:</strong> Procesijski put od crkve do Kondžila dugačak je oko nekoliko kilometara i vodi uzbrdo. Obavezno nosite udobnu i stabilnu obuću te ponesite vodu, osobito zbog ljetnih kolovoških vrućina.</li>
+                <li><strong>Pristup sakramentu ispovijedi:</strong> Budući da na Veliku Gospu na Kondžilo pristiže golem broj vjernika, preporučuje se ispovjediti rano ujutro u župnoj crkvi prije nego što procesija sa slikom krene prema brdu.</li>
+                <li><strong>Zajedništvo i potpora župi:</strong> Komušina je povratnička župa koja živi punim plućima zahvaljujući svojim hodočasnicima. Svojim dolaskom, kupnjom nabožnih predmeta i dobrovoljnim prilozima izravno pomažete opstanak i daljnji razvoj ovoga povijesnog svetišta.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

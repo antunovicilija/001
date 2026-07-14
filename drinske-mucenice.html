@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinske mučenice - Sveobuhvatni Hodočasnički Vodič | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • SORORES MARTYRES</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">Međugorje</a></li>
+                <li><a href="#">Podmilačje</a></li>
+                <li><a href="#">Olovo</a></li>
+                <li><a href="#">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="#">Hrasno</a></li>
+                <li><a href="#">Kondžilo</a></li>
+                <li><a href="#" class="active">Drinske mučenice</a></li>
+                <li><a href="#">Humac</a></li>
+                <li><a href="#">Rama-Šćit</a></li>
+                <li><a href="#">Široki Brijeg</a></li>
+                <li><a href="#">Deževice (Kreševo)</a></li>
+                <li><a href="#">Gornja Tramošnica</a></li>
+                <li><a href="#">Borovica Vareš</a></li>
+                <li><a href="#">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>BLAŽENE DRINSKE MUČENICE</h1>
+        <p>"Vjerne Bogu i redovničkom zavjetu, pretrpjele su muku i dale svoje živote u valovima hladne Drine..."</p>
+        <div class="sacred-symbols">👑 ✝ 🌊</div>
+    </header>
+
+    <div class="container">
+
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje žrtve Drinskih mučenica</h2>
+            <p>Svetište Blaženih Drinskih mučenica nije vezano uz jedno izolirano krško brdo, već spaja planinske Pale, povijesno Sarajevo i herojsko Goražde uz obalu hladne rijeke Drine. Priča o ovih pet časnih sestara iz Družbe Kćeri Božje ljubavi potresno je i veličanstveno svjedočanstvo o vjernosti, redovničkom dostojanstvu i mučeništvu. Sestra Jula Ivanišević (predstojnica samostana), sestra Berchmana Leidenix, sestra Krizina Bojanc, sestra Antonija Fabjan i sestra Bernadeta Banja dale su najviše što su imale – vlastite živote – kako bi obranile svoje zavjete čistoće i kršćansku ljubav [Družba Kćeri Božje ljubavi](https://kblj.hr).</p>
+            
+            <h3>Samostan "Marijin dom" na Palama i misija milosrđa</h3>
+            <p>Sestre su živjele i djelovale na Palama pokraj Sarajeva, u samostanu znakovita imena "Marijin dom", koji je utemeljen 1911. godine. Tamo su nesebično njegovale bolesnike, pomagale sirotinji i pekle kruh za djecu iz državnog dječjeg doma, ne gledajući na njihovu vjersku ili nacionalnu pripadnost. Kada je buknuo Drugi svjetski rat, njihova je kuća prožeta mirom postala meta. Dana 11. prosinca 1941. godine, četnički su odredi opkolili samostan, opljačkali ga i zapalili, a sestre su pod prisilom i prijetnjom oružjem odveli u zarobljeništvo [Družba Kćeri Božje ljubavi](https://kblj.hr).</p>
+            
+            <h3>Krvavi marš kroz snijeg i junačka smrt u Goraždu</h3>
+            <p>Sestre su, odjevene samo u svoje redovničke habite, bile prisiljene pješačiti danima po stravičnoj hladnoći i dubokom snijegu preko planine Romanije prema Goraždu [Družba Kćeri Božje ljubavi](https://kblj.hr). Najstarija među njima, sestra Berchmana (76 godina), iznemogla je od napora te je ostala zatočena na Romaniji, gdje je kasnije i zvjerski ubijena. Ostale četiri sestre zatvorene su u vojarnu u Goraždu, na drugom katu zgrade uz samu Drinu [Družba Kćeri Božje ljubavi](https://kblj.hr). U noći 15. prosinca 1941. godine, pijani vojnici provalili su u njihovu sobu s namjerom da oskvrnu njihovo redovničko dostojanstvo. Pred vođenjem sestre Jule, sestre su, vičući "Isuse, spasi nas!", jedna za drugom skočile kroz prozor s visine od nekoliko metara [Družba Kćeri Božje ljubavi](https://kblj.hr). Teško ozlijeđene na tlu, vojnici su ih usmrtili bajunetama i njihova tijela bacili u rijeku Drinu [Družba Kćeri Božje ljubavi](https://kblj.hr).</p>
+
+            <div class="quote-box">
+                "👑 POBJEDA ČISTOĆE NAD NASILJEM: DRINA JE POSTALA GOLEMA GROBNICA PET SVETIH REDOVNICA, ALI NJIHOVA KRV NIJE PROLIVENA UZALUD. PAPA BENEDIKT XVI. PROGLASIO IH JE BLAŽENIMA 2011. GODINE U SARAJEVU, PRETVORIVŠI NJIHOVU ŽRTVU U VJEČNI SVJETIONIK VJERE. 👑"
+            </div>
+
+            <h3>Teološki značaj i poruka nepokolebljive vjernosti</h3>
+            <p>Teološka poruka Drinskih mučenica utjelovljuje vrhunac kršćanske ljubavi (karitasa) i mučeništva (martyriuma) [Zagrebačka nadbiskupija](https://zg-nadbiskupija.hr). One su pokazale modernom čovjeku kako se dostojanstvo, čast i obećanje dano Bogu čuvaju pod cijenu vlastitoga života. Njihovo svetište danas je mjesto molitve za čistoću srca, vjernost bračnim i redovničkim zavjetima te snagu u podnošenju životnih nepravda, učeći hodočasnike da tama i mržnja nemaju zadnju riječ.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I ZAVJETI -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, hodočasnički zavjeti i oblici pobožnosti</h2>
+            <p>Hodočašće Blaženim Drinskim mučenicama obilježeno je hodom kroz tri postaje njihova križnoga puta, intenzivnom molitvom krunice i sjećanjem na vrijednost kršćanskoga svjedočanstva:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">🌹</div>
+                    <h4>Molitva za čistoću i moralnu snagu</h4>
+                    <p>Mladi i obitelji dolaze moliti za očuvanje moralnih vrijednosti i prepoznavanje dostojanstva svake osobe.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">📿</div>
+                    <h4>Devetnica i Gospina krunica</h4>
+                    <p>Hodočasnici tradicionalno obavljaju devetnicu blaženicama, moleći krunicu koju su sestre toliko voljele.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🌊</div>
+                    <h4>Hodočasnički tihi hod uz Drinu</h4>
+                    <p>Molitvena procesija u tišini duž obale rijeke u Goraždu, na mjestu gdje su tijela sestara predana vodi.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Paljenje pet zavjetnih svijeća</h4>
+                    <p>Ispred oltara pale se točno četiri ili pet masivnih svijeća, od kojih svaka simbolizira jednu od mučenica.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🤝</div>
+                    <h4>Ekumenska i međuljudska poruka</h4>
+                    <p>Budući da su sestre pomagale svima, ovo svetište snažno potiče na ljubav prema bližnjemu i međureligijsko razumijevanje.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA DRINSKE MUČENICE. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Hodočašće Drinskim mučenicama specifično je jer obuhvaća tri povijesne i duhovne točke koje prate njihov zemaljski hod i mučeništvo.</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Crkva Kraljice sv. Krunice u Sarajevu</h3>
+                    <p>Središnje mjesto štovanja i službeno biskupijsko svetište, smješteno uz samostan u sarajevskom naselju Banjski brijeg. Ovdje se nalazi oltar s relikvijama i službena slika blaženica pred kojom hodočasnici započinju svoje duhovno putovanje.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🏡 II. Pale - Ostaci samostana "Marijin dom"</h3>
+                    <p>Mjesto odakle su sestre krenule na svoj mučenički križni put. Danas hodočasnici posjećuju ovo mjesto u tišini i molitvi, razmatrajući njihovu nesebičnu ljubav i rad za siromašne i djecu ovoga planinskog kraja.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🌊 III. Goražde - Spomen-obilježje uz rijeku Drinu</h3>
+                    <p>Mjesto konačne žrtve i junačke smrti. Hodočasnici posjećuju spomen-obilježje u sklopu škole (nekadašnje vojarne) i obalu rijeke Drine, kamo bacaju latice ruža i pale svijeće u spomen na njihovu neprolaznu čistoću i vjeru.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: PASTORALNI RAD I BAŠTINA -->
+        <section class="section-card">
+            <h2>🕊️ 4. Pastoralni život, sestre čuvarice i svjetski odjek</h2>
+            <p>Spomen na žrtvu blaženica vjerno čuvaju sestre iz Družbe Kćeri Božje ljubavi zajedno s Vrhbosanskom nadbiskupijom.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Informativni i hodočasnički centar:</strong> Unutar samostanskog kompleksa u Sarajevu osiguran je prostor za hodočasnike, gdje mogu pogledati dokumentarne filmove, kupiti nabožne predmete i primiti duhovno vodstvo.
+                </li>
+                <li>
+                    <strong>📿 Svjetsko hodočašće i prepoznavanje:</strong> Budući da su sestre bile različitih nacionalnosti (Hrvatica, Slovenke, Austrijanka i Mađarica), ovo svetište redovito posjećuju međunarodne skupine hodočasnika iz cijele Europe [Družba Kćeri Božje ljubavi](https://kblj.hr).
+                </li>
+                <li>
+                    <strong>🛡️ Izgradnja spomen-crkve u Goraždu:</strong> U tijeku su dugogodišnji napori i radovi na izgradnji prve spomen-crkve posvećene blaženicama u samom Goraždu, što će postati novo važno hodočasničko središte uz rijeku Drinu.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Svetište Blaženih Drinskih mučenica obilježava nekoliko povijesnih i liturgijskih datuma tijekom godine:</p>
+
+            <div class="event-box">
+                <strong>📆 24. rujna: Obljetnica beatifikacije (Spomendan)</strong><br>
+                Svečani dan u spomen na 24. rujna 2011. godine, kada su sestre u Sarajevu proglašene blaženima. U svetištu u Sarajevu i na mjestima spomena slavi se svečana sveta misa uz sudjelovanje brojnih hodočasnika i redovnica.
+            </div>
+
+            <div class="event-box">
+                <strong>❄️ 15. prosinca: Svetkovina Blaženih Drinskih mučenica (Glavni blagdan)</strong><br>
+                Dan njihova prelaska u vječnost. Unatoč zimskim uvjetima, stotine vjernika pristižu u crkvu Kraljice svete Krunice u Sarajevu te organizirano odlaze u Goražde na mjesto njihova mučeništva, gdje se moli krunica i slavi svečana sveta misa.
+            </p>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Ako planirate hodočašće Blaženim Drinskim mučenicama, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Organizacija hodočasničke rute:</strong> Budući da su lokacije razdvojene, hodočašće je najbolje planirati autobusnim ili automobilskim prijevozom na relaciji Sarajevo - Pale - Goražde kako biste u potpunosti obišli cijeli njihov povijesni put.</li>
+                <li><strong>Priprema za zimsko hodočašće:</strong> Glavni blagdan slavi se u prosincu, kada u ovim planinskim dijelovima Bosne vlada jak mraz i snijeg. Obavezno se toplo odjenite i prilagodite obuću zimskim uvjetima.</li>
+                <li><strong>Najava većih skupina:</strong> Ako u svetište u Sarajevu ili na spomen-mjesta dolazi veća hodočasnička skupina, preporučuje se unaprijed najaviti sestrama Kćerima Božje ljubavi u Sarajevu kako bi vas dočekale i osigurale stručno vodstvo.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

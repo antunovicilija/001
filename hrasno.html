@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hrasno - Biskupijsko svetište Kraljice Mira | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • REGINA PACIS</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">Međugorje</a></li>
+                <li><a href="#">Podmilačje</a></li>
+                <li><a href="#">Olovo</a></li>
+                <li><a href="#">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="#" class="active">Hrasno</a></li>
+                <li><a href="#">Kondžilo</a></li>
+                <li><a href="#">Drinske mučenice</a></li>
+                <li><a href="#">Humac</a></li>
+                <li><a href="#">Rama-Šćit</a></li>
+                <li><a href="#">Široki Brijeg</a></li>
+                <li><a href="#">Deževice (Kreševo)</a></li>
+                <li><a href="#">Gornja Tramošnica</a></li>
+                <li><a href="#">Borovica Vareš</a></li>
+                <li><a href="#">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>HRASNO – KRALJICA MIRA</h1>
+        <p>"Kraljice mira, moli za nas, udijeli mir našim srcima, našim obiteljima i cijelome svijetu..."</p>
+        <div class="sacred-symbols">👑 ✝ 🕊️</div>
+    </header>
+
+    <div class="container">
+
+<!-- OVDJE ZAVRŠAVA 1. DIO KODA ZA HRASNO. SLJEDEĆI 2. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje svetišta u Hrasnu</h2>
+            <p>Biskupijsko svetište Kraljice Mira u Hrasnu, smješteno u krševitom i poviješću napaćenom hercegovačkom zaleđu nedaleko od Neuma, službeno je duhovno središte Trebinjsko-mrkanske biskupije. Povijest ovoga svetog mjesta neraskidivo je vezana uz ustrajnost, žrtvu i duboku opstojnost katoličkoga puka u istočnoj Hercegovini, koji je kroz stoljeća ratova, stradanja i iseljavanja uspio očuvati svoju vjernost Katoličkoj Crkvi i marijanskoj pobožnosti.</p>
+            
+            <h3>Osnivanje i proglašenje svetišta 1977. godine</h3>
+            <p>Župa Hrasno utemeljena je 1761. godine, no njezina novija povijest dobiva puni duhovni zamah u drugoj polovici 20. stoljeća. Potaknut dubokom vjerom ovdašnjega naroda, tadašnji župnik don Stjepan Batinović započeo je duhovnu pripremu i materijalnu izgradnju mjesta koje će postati oaza mira. Službeni povijesni trenutak dogodio se 8. svibnja 1977. godine, kada je tadašnji biskup ordinarij dr. Petar Čule svečano proglasio Hrasno biskupijskim svetištem Kraljice Mira. Toga je dana na vrhu obližnjega brda Gradina blagoslovljen monumentalni brončani kip Majke Božje.</p>
+            
+            <h3>Stradanja u Domovinskom ratu i uskrsnuće iz pepela</h3>
+            <p>Tijekom Domovinskog rata u prvoj polovici devedesetih godina, župa Hrasno i njezino svetište našli su se na samoj crti bojišnice. Katolički puk bio je prisiljen napustiti svoje domove, a župna crkva, pastoralni centar i cjelokupni sakralni prostor bili su sustavno granatirani, devastirani i spaljeni. Čudom i providnošću, Gospin kip na vrhu Gradine preživio je ratna razaranja unatoč brojnim gelerima koji su padali oko njega. Završetkom rata, ranjeni vjernici vratili su se na svoja ognjišta i započeli mukotrpnu duhovnu i materijalnu obnovu, pretvorivši Hrasno u ponovni simbol mira i pobjede života nad mržnjom.</p>
+
+            <div class="quote-box">
+                "👑 UTJEHA U HERCEGOVAČKOM KRŠU: KRALJICA MIRA IZDIGLA SE IZNAD RATNIH RUŠEVINA, PORUČUJUĆI SVAKOM HODOČASNIKU DA SE PRAVI I TRAJNI MIR MOŽE IZGRADITI SAMO NA OPRAŠTANJU I ČVRSTOJ VJERI U BOGA. 👑"
+            </div>
+
+            <h3>Teološki značaj i marijanski hod prema miru</h3>
+            <p>Teološka poruka svetišta u Hrasnu sažeta je u Marijinu naslovu "Kraljica Mira". U vremenima kada je moderni svijet rastrgan nemirima, obiteljskim krizama i otuđenjem, Hrasno nudi utočište tišine i sakramentalnog pomirenja. Hodočasnici se ovdje uče marijanskoj poslušnosti i poniznosti, prepoznajući Blaženu Djevicu Mariju kao onu koja zagovara i spaja ranjena srca te vodi ljude prema svome Sinu Isusu Kristu, koji je jedini izvor istinskoga i neprolaznoga mira.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I ZAVJETI -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, obiteljski zavjeti i oblici pokore</h2>
+            <p>Hodočašće Kraljici Mira u Hrasnu snažno je obilježeno žrtvom hercegovačkoga kamenjara, osobnom pokorom i tradicionalnim oblicima marijanske pobožnosti:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">⛰️</div>
+                    <h4>Pokornički uspon na Gradinu</h4>
+                    <p>Hodočasnici obavljaju pobožnost Križnoga puta uspinjući se strmom, kamenitom stazom prema Gospinu kipu.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🧎</div>
+                    <h4>Molitve i zavjeti na koljenima</h4>
+                    <p>Tradicionalni običaj u kojemu vjernici na koljenima obilaze oko mramornoga postolja kipa Kraljice Mira.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Sakrament svete ispovijedi</h4>
+                    <p>Ispovijedanje u kršu pod otvorenim nebom središnji je dio duhovne obnove i pomirenja za tisuće hodočasnika.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Paljenje zavjetnih svijeća</h4>
+                    <p>Ispred zavjetnoga prostora pale se svijeće za mir u obiteljima, zdravlje bolesnih i blagoslov djece.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🤍</div>
+                    <h4>Molitve za duhovna zvanja</h4>
+                    <p>U Hrasnu se tradicionalno prinose molitve za nova svećenička i redovnička zvanja u domovini i svijetu.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA HRASNO. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Svetište u Hrasnu prostire se na župnom posjedu i okolnom brežuljku, čineći jedinstvenu cjelinu prožetu hercegovačkim kršem i duhovnošću.</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Župna crkva i župni stan</h3>
+                    <p>Središnje mjesto liturgijskih slavlja i okupljanja. Nakon potpunog razaranja u ratu, crkva je obnovljena i uređena. Unutrašnjost pruža prostor za tihu molitvu, klanjanje pred Presvetim i slavljenje sakramenata.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>👑 II. Brdo Gradina i kip Kraljice Mira</h3>
+                    <p>Vrhunac hodočašća u Hrasno. Na vrhu brda uzdiže se monumentalni brončani kip Kraljice Mira, rad kipara Ante Starčevića. Majka Božja prikazana je s ispruženom rukom kojom blagoslivlja cijeli hercegovački kraj.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>⛰️ III. Križni put duž uzvisine</h3>
+                    <p>Uređena kamenita staza koja vodi od podnožja do vrha Gradine. Duž staze su podignute postaje Križnoga puta s umjetničkim reljefima, pred kojima hodočasnici razmatraju Isusovu muku i prinose vlastite žrtve.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: PASTORALNI RAD I BAŠTINA -->
+        <section class="section-card">
+            <h2>🕊️ 4. Pastoralni centar, hodočasnici i povijesna ostavština</h2>
+            <p>Svetište u Hrasnu duhovno oblikuju biskupijski svećenici koji neumorno čuvaju povijesni i vjerski identitet ovoga kraja.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Pastoralno-hodočasnički dom:</strong> Izgrađen za prihvat i duhovne sadržaje hodočasnika koji organizirano pristižu iz svih župa Hercegovine, susjedne Dalmacije te dijaspore.
+                </li>
+                <li>
+                    <strong>📿 Galerija i spomen-soba don Stjepana Batinovića:</strong> Prostor posvećen dugogodišnjem župniku i utemeljitelju svetišta. Čuva uspomenu na njegov plodonosni rad, izdavanje duhovnog lista "Dumo i narod" te povijest župe.
+                </li>
+                <li>
+                    <strong>🌲 Vanjski amfiteatar za liturgijska slavlja:</strong> Uređeni prostor ispred crkve s natkrivenim oltarom, idealan za prihvat tisuća vjernika tijekom velikih ljetnih i proljetnih hodočasničkih dana.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Središnja zbivanja u Biskupijskom svetištu u Hrasnu vezana su uz svibanj, mjesec posvećen Blaženoj Djevici Mariji:</p>
+
+            <div class="event-box">
+                <strong>📆 Druga nedjelja svibnja: Glavno hodočašće i proslava Kraljice Mira</strong><br>
+                Središnji i najsvečaniji dan u svetištu. Tisuće vjernika i hodočasnika iz Trebinjsko-mrkanske, Mostarsko-duvanjske i splitskih biskupija slijevaju se u Hrasno. Program započinje pobožnošću Križnoga puta na Gradini, nastavlja se svečanom procesijom te pučkom svetom misom koju predvode biskupi uz sudjelovanje brojnih svećenika.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 15. kolovoza: Svetkovina Uznesenja BDM (Velika Gospa)</strong><br>
+                Značajan marijanski blagdan koji okuplja domaći puk i raseljene župljane koji ljetne mjesece provode u rodnom kraju, obnavljajući svoje obiteljske zavjete.
+            </div>
+
+            <div class="event-box">
+                <strong>🍂 Prva nedjelja listopada: Zahvalno hodočašće (Kraljica svete Krunice)</strong><br>
+                Tradicionalni završetak ljetnog hodočasničkog ciklusa, kada se vjernici okupljaju kako bi zahvalili Gospi za sve primljene milosti, plodove zemlje i mir tijekom protekle godine.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Ako planirate posjetiti Biskupijsko svetište u Hrasnu, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Priprema za pokornički uspon:</strong> Staza prema vrhu Gradine je tipični hercegovački krš s oštrim kamenom. Obavezno nosite čvrstu i stabilnu obuću. Ako se odlučite penjati bosi radi zavjeta, činite to polako i s oprezom.</li>
+                <li><strong>Zaštita od sunca i vrućine:</strong> Hrasno se nalazi u krševitom području gdje ljetne i kasne proljetne temperature mogu biti izrazito visoke. Ponesite zaštitu od sunca (šešir, kapu) i dovoljne količine pitke vode.</li>
+                <li><strong>Duhovno raspoloženje:</strong> Središnja proslava u svibnju okuplja golem broj ljudi. Preporučuje se doći ranije ujutro kako biste u miru pristupili sakramentu ispovijedi prije početka službenog programa i mise.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

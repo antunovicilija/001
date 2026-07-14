@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stup Sarajevo - Svetište Gospe Stupske | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • REGINA SARAJEVENSIS</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">Međugorje</a></li>
+                <li><a href="#">Podmilačje</a></li>
+                <li><a href="#">Olovo</a></li>
+                <li><a href="#">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="#">Hrasno</a></li>
+                <li><a href="#">Kondžilo</a></li>
+                <li><a href="#">Drinske mučenice</a></li>
+                <li><a href="#">Humac</a></li>
+                <li><a href="#">Rama-Šćit</a></li>
+                <li><a href="#">Široki Brijeg</a></li>
+                <li><a href="#">Deževice (Kreševo)</a></li>
+                <li><a href="#">Gornja Tramošnica</a></li>
+                <li><a href="#">Borovica Vareš</a></li>
+                <li><a href="#" class="active">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>STUP SARAJEVO – GOSPA STUPSKA</h1>
+        <p>"Majko dobrog savjeta, Gospo Stupska, moli za naš grad Sarajevo i izlij blagoslov mira na sve tvoje hodočasnike..."</p>
+        <div class="sacred-symbols">👑 ✝ 🕊️</div>
+    </header>
+
+    <div class="container">
+
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje Gospe Stupske</h2>
+            <p>Svetište Gospe Stupske u sarajevskom naselju Stup ima neprocjenjivu povijesnu i duhovnu važnost kao središnje marijansko okupljalište katolika u Sarajevskom polju i cijeloj Vrhbosanskoj nadbiskupiji. Župa Uznesenja Blažene Djevice Marije na Stupu utemeljena je 1890. godine odvajanjem od povijesne katedralne župe, u vrijeme kada se Sarajevo pod austrougarskom upravom naglo širilo i razvijalo. Od samoga početka, ovo je mjesto postalo duhovno utočište i oaza mira za katolički puk u glavnome gradu Bosne i Hercegovine.</p>
+            
+            <h3>Izgradnja svetišta i čudotvorna slika Majke Dobrog Savjeta</h3>
+            <p>Župna crkva, prelijepa građevina s elementima neoromanike, dovršena je i blagoslovljena 1892. godine. Središte njezina duhovnog privlačenja postala je čudotvorna slika Gospe Stupske, poznata i pod nazivom Gospa Dobrog Savjeta. Pred ovim milosnim likom generacije Sarajlija, radnika, intelektualaca i hodočasnika iz okolnih mjesta izlijevaju svoje molitve, prošnje i zahvale. Svetište je vrlo brzo prepoznato kao mjesto posebnih uslišanja i duhovne utjehe, napose u vremenima društvenih križa i osobnih kušnja.</p>
+            
+            <h3>Teška stradanja u Domovinskom ratu i obnova iz pepela</h3>
+            <p>Najveću povijesnu kalvariju i kušnju Stup je doživio tijekom Domovinskog rata, u razdoblju od 1992. do 1995. godine. Budući da se župa nalazila na samoj crti bojišnice i na udaru teških topničkih napada, crkva je u svibnju 1992. godine zapaljena te u potpunosti izgorjela i devastirana. Župna kuća i pastoralni centar pretrpjeli su stravična razaranja. Srećom i Božjom providnošću, čudotvorna Gospina slika pravodobno je evakuirana i spašena. Završetkom rata, ranjena, ali nepokorena stupska zajednica započela je mukotrpnu duhovnu i materijalnu obnovu. Crkva je podignuta iz pepela, obnovljen joj je stari sjaj, a svetište je ponovno postalo živi simbol kršćanskog opstanka u Sarajevu.</p>
+
+            <div class="quote-box">
+                "👑 SVJETLOST SARAJEVSKOG POLJA: IAKO JE CRKVA BILA SPALJENA I TEŠKO RANJENA RATOM, GOSPA STUPSKA SE VRATILA NA SVOJ TRON, SVJEDOČEĆI DA SE DUHOVNI ŽIVOT I VJERA JEDNOGA GRADA NE MOGU UNIŠTITI POŽARIMA. 👑"
+            </div>
+
+            <h3>Teološki značaj i poruka mudrog savjeta</h3>
+            <p>Teološki značaj stupskoga svetišta duboko je prožet Marijinom ulogom kao "Majke Dobrog Savjeta". U modernome, užurbanom i često zbunjenom svijetu, hodočasnici dolaze na Stup kako bi u tišini njezina svetišta osluhnuli Božji glas i potražili mudar savjet za donošenje ispravnih životnih odluka. Gospa Stupska prepoznata je kao tješiteljica obitelji, zaštitnica bolesnih i ranjenih duša te zagovornica međuljudskog i međureligijskog suživota i mira u gradu Sarajevu i cijeloj domovini.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I ZAVJETI -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, marijanski zavjeti i oblici pobožnosti</h2>
+            <p>Hodočašće Gospi Stupskoj odlikuje se dubokom sakramentalnom pobožnošću, obiteljskim zavjetima i tradicionalnim okupljanjima vjernika iz cijeloga grada i okolice:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">📿</div>
+                    <h4>Devetnica i zavjetne krunice</h4>
+                    <p>Uoči blagdana Velike Gospe, vjernici svake večeri u velikom broju dolaze na Stup moliti krunicu i sudjelovati u duhovnoj pripravi.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Ispovijed i duhovno pomirenje</h4>
+                    <p>Svetište je prepoznatljivo po cjelodnevnoj prigodi za sakrament svete ispovijedi, koji vjernicima donosi unutarnje rasterećenje.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Paljenje zavjetnih svijeća</h4>
+                    <p>Ispred kapele i u Gospinu dvorištu pale se stotine voštanih svijeća za zdravlje obitelji, mir u svijetu i blagoslov rada.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🧎</div>
+                    <h4>Molitveni hod oko Gospina kipa</h4>
+                    <p>Tradicionalni pučki zavjet u kojemu hodočasnici u skrušenoj molitvi obilaze oko kipa Blažene Djevice Marije.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🤝</div>
+                    <h4>Molitva za suživot i mir u gradu</h4>
+                    <p>Stup je tradicionalno mjesto gdje se prinose vatrene molitve za mir, toleranciju i bratsko razumijevanje među svim građanima Sarajeva.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA STUP SARAJEVO. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Svetište na Stupu ugnijezdilo se u povijesnom katoličkom dijelu Sarajeva, a hodočasnik treba proći kroz nekoliko ključnih točaka:</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Župna crkva Uznesenja Blažene Djevice Marije</h3>
+                    <p>Središte svih liturgijskih zbivanja. Ova povijesna neoromanička crkva, s ljubavlju obnovljena nakon ratnog paleža, pruža predivan i dostojanstven prostor za tihu osobnu molitvu, klanjanje i sakramentalni život.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🎨 II. Čudotvorna slika Gospe Stupske</h3>
+                    <p>Smještena u glavnome svetištu crkve, ova milosna slika Majke Dobrog Savjeta privlači poglede svih hodočasnika. Vjernici pred njom provode sate u tihoj meditaciji, preporučujući joj svoje obitelji, rad i zdravlje bolesnih.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🌳 III. Gospino dvorište i vanjski oltar</h3>
+                    <p>Prostrano i lijepo uređeno crkveno dvorište koje za vrijeme velikih ljetnih blagdana postaje otvorena katedrala pod vedrim nebom. Sadrži vanjski natkriveni oltar na kojemu se služe svečane hodočasničke mise.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: PASTORALNI ŽIVOT I DJELOVANJE -->
+        <section class="section-card">
+            <h2>🕊️ 4. Pastoralni život, sarajevski hodočasnici i čuvari svetišta</h2>
+            <p>Svetištem na Stupu upravljaju dijecezanski svećenici Vrhbosanske nadbiskupije koji neumorno služe katoličkoj zajednici u glavnome gradu.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Župni i pastoralni centar:</strong> Moderni objekt u sklopu svetišta koji služi za prihvat hodočasničkih skupina, održavanje duhovnih obnova, vjeronauka za mladež te različitih kulturnih manifestacija.
+                </li>
+                <li>
+                    <strong>📿 Caritativno djelovanje i skrb:</strong> Župa Stup povijesno je poznata po razvijenom karitativnom radu, pružanju potpore najpotrebitijim sugrađanima, starijima i nemoćnima, čime zorno svjedoči Gospinu ljubav na djelu.
+                </li>
+                <li>
+                    <strong>🛡️ Međureligijski dijalog i susreti:</strong> Budući da se nalazi u multietničkom Sarajevu, svetište na Stupu često je mjesto susreta i suradnje, promičući mir, toleranciju i međusobno uvažavanje među svim konfesijama.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Središnji i najsvečaniji dio godine na Stupu vezan je uz kolovoz, kada svetište postaje duhovno srce Sarajeva:</p>
+
+            <div class="event-box">
+                <strong>📆 14. kolovoza: Uočnica blagdana Velike Gospe</strong><br>
+                U kasnim poslijepodnevnim satima započinje hodočasnički program uz molitvu krunice, prigodu za svetu ispovijed te svečanu svetu misu uočnicu, nakon koje slijedi tradicionalna procesija sa svijećama kroz Gospino dvorište.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 15. kolovoza: Svetkovina Uznesenja BDM (VELIKA GOSPA - Glavni patron)</strong><br>
+                Središnji i najveći hodočasnički dan u godini na Stupu. Tisuće vjernika iz svih sarajevskih župa, ali i hodočasnici iz okolnih mjesta (Kiseljak, Kreševo, Breza) slijevaju se na Stup. Svečana pučka sveta misa na vanjskom oltaru slavi se u 11:00 h, predvođena nadbiskupima, praćena velikim pučkim zajedništvom.
+            </div>
+
+            <div class="event-box">
+                <strong>🍂 8. rujna: Blagdan Rođenja Blažene Djevice Marije (Mala Gospa)</strong><br>
+                Drugi po važnosti marijanski blagdan u svetištu koji okuplja domaće vjernike i Sarajlije u intimnijoj, tihoj i duboko molitvenoj atmosferi, čime se zaokružuje ljetni ciklus velikih hodočašća.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Ako planirate posjetiti Svetište Gospe Stupske u Sarajevu, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Dolazak i gradski prijevoz:</strong> Stup je izvrsno povezan s ostatkom grada tramvajskim i autobusnim linijama. Na dan Velike Gospe, zbog gužvi i zatvaranja ulica oko crkve, preporučuje se koristiti javni gradski prijevoz umjesto osobnog automobila.</li>
+                <li><strong>Raniji dolazak radi ispovijedi:</strong> Budući da na samu svetkovinu pristiže golem broj vjernika, redovi za ispovijed znaju biti dugi. Dođite rano ujutro kako biste u miru pristupili sakramentu pomirenja prije početka glavne mise.</li>
+                <li><strong>Poštivanje sakralnog prostora:</strong> Unutar Gospina dvorišta i crkve obvezna je prikladna odjeća (pokrivena ramena i koljena). Isključite mobilne uređaje tijekom liturgijskih slavlja i tihe molitve ispred čudotvorne slike.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

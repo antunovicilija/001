@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rama-Šćit - Svetište Gospe Ramske | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • REGINA RAMAE</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#">Početna</a></li>
+                <li><a href="#">Međugorje</a></li>
+                <li><a href="#">Podmilačje</a></li>
+                <li><a href="#">Olovo</a></li>
+                <li><a href="#">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="#">Hrasno</a></li>
+                <li><a href="#">Kondžilo</a></li>
+                <li><a href="#">Drinske mučenice</a></li>
+                <li><a href="#">Humac</a></li>
+                <li><a href="#" class="active">Rama-Šćit</a></li>
+                <li><a href="#">Široki Brijeg</a></li>
+                <li><a href="#">Deževice (Kreševo)</a></li>
+                <li><a href="#">Gornja Tramošnica</a></li>
+                <li><a href="#">Borovica Vareš</a></li>
+                <li><a href="#">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>RAMA-ŠĆIT – GOSPA RAMSKA</h1>
+        <p>"Gospo Ramska, Majko naše povijesti i čuvarice naših ognjišta, moli za nas i blagoslovi ramni puk..."</p>
+        <div class="sacred-symbols">👑 ✝ ⛵</div>
+    </header>
+
+    <div class="container">
+
+<!-- OVDJE ZAVRŠAVA 1. DIO KODA ZA RAMU-ŠĆIT. SLJEDEĆI 2. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje Gospe Ramske</h2>
+            <p>Svetište Gospe Ramske na Šćitu povijesno je, kulturno i duhovno srce ramskoga kraja i cijele sjeverne Hercegovine. Smješten na nekadašnjem uzvišenju iznad plodne doline, a danas na prelijepom poluotoku usred Ramskoga jezera, ovaj franjevački samostanski kompleks živi je svjedok gorke, ali i ponosne prošlosti u kojoj su se izmjenjivali paleži, progoni, ubojstva i čudesna podizanja iz pepela. Gospa Ramska postala je kroz stoljeća sinonim za majčinsku utjehu, opstanak i neraskidivu vezu naroda i njegovih franjevaca.</p>
+            
+            <h3>Velika seoba 1687. godine i postanak Gospe Sinjske</h3>
+            <p>Franjevci su u Rami prisutni još od srednjega vijeka, a samostan na Šćitu podignut je prije dolaska Osmanlija. Najkritičniji trenutak povijesti dogodio se u vrijeme Bečkoga rata, 1687. godine. Bježeći pred osmanskom odmazdom, ramski su franjevci pod vodstvom gvardijana fra Pavla Vučkovića morali napustiti Ramu i povući se prema Cetinskoj krajini u Dalmaciji. Sa sobom su ponijeli najveću ramsku svetinju – čudotvornu sliku Majke od Milosti. Ta je slika kasnije u Sinju postala općeizvanredno štovana kao <strong>Čudotvorna Gospa Sinjska</strong>. Samostan na Šćitu tada je zapaljen i opustošen, no sveta se klica ubrzo vratila na svoje zgarište.</p>
+            
+            <h3>Tragedije u Drugom svjetskom ratu i potapanje doline</h3>
+            <p>Svetište je kroz noviju povijest doživjelo još dva golema udarca. U srpnju 1942. godine partizani su zapalili samostan i crkvu, pri čemu su izgorjeli neprocjenjivi crkveni arhivi, matice i knjižnica, a četnički odredi u jesen iste godine izvršili su stravičan pokolj nad više od tisuću nedužnih ramskih civila. Drugi veliki potres dogodio se 1968. godine kada je izgrađena brana na rijeci Rami, čime je potopljena cijela plodna ramska dolina s brojnim selima kako bi se stvorilo Ramsko jezero. Samostan na Šćitu ostao je na osamljenom poluotoku, vizualno prelijep, ali okružen tugom raseljenog naroda koji je morao iseliti diljem svijeta.</p>
+
+            <div class="quote-box">
+                "👑 MAJKA PROGNANIH I POVRATNIKA: IAKO JE NJEZINA ORIGINALNA SLIKA ODNESENA U SINJ, GOSPA RAMSKA JE OSTALA NA ŠĆITU KROZ SVOJU VJERNU KOPIJU, OKUPLJAJUĆI SVOJU RASPRŠENU DJECU I LIJEČEĆI POVREDE PROŠLOSTI. 👑"
+            </div>
+
+            <h3>Teološki značaj i simbolika Ramskoga križa</h3>
+            <p>Teološki značaj Rame-Šćita duboko je prožet otajstvom Kristova križa i Marijina supatništva (Compassio). Rama je kroz stoljeća bila žrtveni prinos za očuvanje katoličke vjere na ovim prostorima. Hodočasnici koji dolaze na Šćit pred Gospinu sliku donose svoje povijesne i osobne rane, tražeći snagu za oprost i novi početak. Monumentalni Ramski križ koji dominira dvorištem simbolizira upravo to – patnju koja kroz vjeru biva preobražena u uskrsnuće, nadu i ponos kršćanskog opstanka.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I ZAVJETI -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, pučke pobožnosti i oblici pokore</h2>
+            <p>Hodočašće Gospi Ramskoj na Šćit tradicijski je obilježeno dubokom marijanskom pobožnošću, spomenom na pretke i specifičnim oblicima hercegovačko-bosanske pokore:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">⛵</div>
+                    <h4>Hodočašće preko jezera i brda</h4>
+                    <p>Mnogi hodočasnici pristižu pješice preko okolnih planina (Vran, Raduša), a neki tradicionalno čamcima preko Ramskoga jezera.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🧎</div>
+                    <h4>Obilaženje Gospina oltara</h4>
+                    <p>Tradicionalni zavjetni običaj u kojemu vjernici u tišini, skrušeno i često na koljenima obilaze oko glavnoga oltara s Gospinom slikom.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Sakrament pomirenja pod vedrim nebom</h4>
+                    <p>Tijekom velikih blagdana, u prostranom parku samostana organizira se cjelodnevna sveta ispovijed za tisuće vjernika.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Zavjetne svijeće i molitve za pokojne</h4>
+                    <p>Ispred spomen-obilježja i u crkvi pale se svijeće za sve poginule, stradale i nestale Ramljake kroz tešku povijest.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">👗</div>
+                    <h4>Smotra tradicijskih narodnih nošnji</h4>
+                    <p>Blagdan Male Gospe na Šćitu poznat je po tome što vjernici s ponosom oblače jedinstvene narodne nošnje ramskoga kraja.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA RAMU-ŠĆIT. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Samostanski posjed na Šćitu predstavlja spoj vrhunske umjetnosti, povijesti i sakralnoga mira. Svaki hodočasnik treba proći kroz nekoliko ključnih točaka:</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>编 I. Samostanska crkva Uznesenja BDM</h3>
+                    <p>Prekrasna trobrodna crkva koja čuva vjernu kopiju čudotvorne slike Gospe Ramske. Unutrašnjost crkve ukrašena je vrhunskim umjetničkim djelima glasovitih hrvatskih umjetnika, među kojima se ističe monumentalna slika iza glavnoga oltara, rad slikara Josipa Biffela.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🏛️ II. Etnografski muzej i Ramska kuća</h3>
+                    <p>Smješten u starom samostanskom objektu, ovo je jedan od najboljih etnografskih muzeja u cijeloj regiji. Hodočasnici ovdje mogu vidjeti kako se nekada živjelo u staroj Rami, razgledati tradicionalne zanate, alate, tekstilnu radionicu te floru i faunu ramskoga kraja.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🎨 III. Dvorište, Ramski križ i "Ramska majka"</h3>
+                    <p>Golemi park oko crkve ukrašen je vrhunskim brončanim skulpturama Mile Blaževića i Kuzme Kovačića. Središnje mjesto zauzima veličanstveni Ramski križ s prikazima ramskih stradanja, te skulptura "Ramska majka" koja simbolizira ustrajnost i ponos ovdašnjih žena.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: PASTORALNI RAD I BAŠTINA -->
+        <section class="section-card">
+            <h2>🕊️ 4. Samostanski život, Ramski mučenici i duhovna skrb</h2>
+            <p>Ramski franjevci kroz povijest su bili i ostali neustrašivi čuvari vjere, kulture i opstanka naroda na ovim prostorima.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Kuća mira i duhovnih obnova:</strong> U sklopu samostanskoga kompleksa djeluje suvremeno uređeni objekt namijenjen za prihvat hodočasnika, održavanje seminara, duhovnih vježbi i predavanja za domaće i strane vjernike.
+                </li>
+                <li>
+                    <strong>📿 Spomen na Ramske mučenike:</strong> Unutar samostanskoga kruga posebna se pažnja posvećuje očuvanju spomena na sve stradale Ramljake, napose kroz molitve i komemoracije za žrtve četničkoga pokolja iz 1942. godine.
+                </li>
+                <li>
+                    <strong>🌿 Franjevačka mladež i pastoral:</strong> Župa Šćit iznimno je aktivna u radu s mladima kroz Framu, zborsko pjevanje, karitativne akcije te ekološke projekte očuvanja ljepote Ramskoga jezera i okolne prirode.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Svetište na Šćitu proživljava svoje najsvečanije i najposjećenije trenutke tijekom kasnoga ljeta i rane jeseni:</p>
+
+            <div class="event-box">
+                <strong>📆 15. kolovoza: Svetkovina Velike Gospe (Uznesenje BDM)</strong><br>
+                Prvi veliki ljetni marijanski blagdan u Rami. Okuplja tisuće lokalnih vjernika i Ramljaka koji žive u dijaspori, a koji ljetne mjesece koriste za posjet rodnome kraju i zavjetnoj Majci.
+            </div>
+
+            <div class="event-box">
+                <strong>🕊️ 7. rujna: Uočnica Male Gospe</strong><br>
+                U kasnim popodnevnim satima započinje hodočasnički program uz molitvu krunice, prigodu za svetu ispovijed te svečanu svetu misu uočnicu. Mnogi hodočasnici pješaci provode večer u molitvi i druženju u samostanskom dvorištu.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 8. rujna: Svetkovina Rođenja BDM (MALA GOSPA - Glavni patron)</strong><br>
+                Središnji i najveći hodočasnički dan u godini na Šćitu. Desetci tisuća hodočasnika iz Bosne, Hercegovine i Dalmacije slijevaju se na poluotok. Svečana pučka sveta misa na vanjskom oltaru slavi se u 11:00 h, praćena veličanstvenom procesijom, tradicionalnim ramskim pjevanjem i smotrom narodnih nošnji.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Ako planirate posjetiti Svetište Gospe Ramske na Šćitu, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Dolazak i prometna regulacija:</strong> Za blagdan Male Gospe na prilaznim cestama prema Šćitu i samome poluotoku vladaju velike prometne gužve. Preporučuje se doći ranije ujutro kako biste osigurali parking i izbjegli zastoje.</li>
+                <li><strong>Spoj duhovnoga i kulturnog posjeta:</strong> Obavezno odvojite vrijeme prije ili nakon svete mise za posjet Etnografskom muzeju. Muzej nudi neprocjenjiv uvid u povijest i dušu ramskoga čovjeka i s pravom se smatra kulturnim biserom Bosne i Hercegovine.</li>
+                <li><strong>Priprema za vremenske uvjete:</strong> Položaj samostana na poluotoku Ramskoga jezera znači da povjetarac s vode može donijeti svježinu čak i za sunčanih dana. Ponesite laganu vjetrovku ili vestu, te zaštitu od sunca ako misu pratite s otvorenoga prostora.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>

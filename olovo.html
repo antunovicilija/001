@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olovo - Svetište Gospe Olovske | Katolička Svetišta BiH</title>
+    <style>
+        /* --- RASKOŠNA SAKRALNA I ZLATNA PALETA BOJA --- */
+        :root {
+            --primary-blue: #0b192c; /* Duboka noćno plava */
+            --sacred-gold: #d4af37; /* Sjajno zlato */
+            --dark-gold: #aa841d; /* Tamno zlato za sjene */
+            --light-gold: #f3e5ab; /* Svijetlo pastelno zlato za pozadine */
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f5f0e1 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif; /* Tradicionalni sakralni font */
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* --- VELIKI SREDIŠNJI ZLATNI KRIŽ NA VRHU --- */
+        .top-monument {
+            text-align: center;
+            background-color: var(--primary-blue);
+            padding: 3rem 1rem 1rem 1rem;
+            color: var(--sacred-gold);
+        }
+
+        .main-gold-cross {
+            font-size: 7rem;
+            line-height: 1;
+            text-shadow: 0px 0px 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .sacred-monogram {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROŠIRENA NAVIGACIJA SA SVIM SVETIŠTIMA --- */
+        nav {
+            background-color: var(--primary-blue);
+            padding: 0 2rem 2rem 2rem;
+            border-bottom: 5px double var(--sacred-gold);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid var(--sacred-gold);
+            border-radius: 4px;
+            background-color: rgba(212, 175, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-blue);
+            background-color: var(--sacred-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- HERO ZAGLAVLJE --- */
+        .hero {
+            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.95));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 4px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-style: italic;
+            color: #f8fafc;
+        }
+
+        .sacred-symbols {
+            font-size: 2.2rem;
+            color: var(--sacred-gold);
+            letter-spacing: 20px;
+            margin-top: 1rem;
+        }
+
+        /* --- GLAVNI STRUKTURNI KONTEJNER --- */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(170, 132, 29, 0.1);
+            margin-bottom: 4rem;
+            border: 2px solid var(--sacred-gold);
+            position: relative;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 1px dashed var(--sacred-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px double var(--sacred-gold);
+            padding-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--dark-gold);
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1rem 0;
+            border-left: 4px solid var(--sacred-gold);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        /* --- POSEBNE LOKALNE STRUKTURE --- */
+        .quote-box {
+            background-color: var(--light-gold);
+            border: 1px solid var(--sacred-gold);
+            border-left: 8px solid var(--dark-gold);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .grid-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 2px solid var(--sacred-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            background-color: var(--light-gold);
+        }
+
+        .grid-card .icon {
+            font-size: 2.5rem;
+            color: var(--dark-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-card h4 {
+            color: var(--primary-blue);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 2.5rem 0;
+        }
+
+        .place-subcard {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--sacred-gold);
+            border-top: 6px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .badge-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .badge-list li {
+            background: #faf8f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--sacred-gold);
+            border-left: 6px solid var(--primary-blue);
+        }
+
+        .event-box {
+            background: var(--white);
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            border: 1px solid var(--sacred-gold);
+            border-left: 5px solid var(--dark-gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 5px double var(--sacred-gold);
+        }
+
+        footer p {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-symbols {
+            font-size: 2rem;
+            letter-spacing: 20px;
+            color: var(--sacred-gold);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-card { padding: 2rem 1.5rem; }
+            h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SREDIŠNJI KRIŽ NA SAMOM VRHU STRANICE -->
+    <div class="top-monument">
+        <div class="main-gold-cross">✝</div>
+        <div class="sacred-monogram">IHS • AMGD • SALVE REGINA</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="medugorje.html">Međugorje</a></li>
+                <li><a href="podmilacje.html">Podmilačje</a></li>
+                <li><a href="olovo.html" class="active">Olovo</a></li>
+                <li><a href="kotor-varos.html">Kotor Varoš (Rokovo)</a></li>
+                <li><a href="hrasno.html">Hrasno</a></li>
+                <li><a href="kondzilo.html">Kondžilo.html</a></li>
+                <li><a href="drinske-mucenice.html">Drinske mučenice</a></li>
+                <li><a href="humac.html">Humac</a></li>
+                <li><a href="rama-scit.html">Rama-Šćit</a></li>
+                <li><a href="siroki-brijeg.html">Široki Brijeg</a></li>
+                <li><a href="dezevice-kresevo.html">Deževice (Kreševo)</a></li>
+                <li><a href="gornja-tramosnica.html">Gornja Tramošnica</a></li>
+                <li><a href="borovica-vares.html">Borovica Vareš</a></li>
+                <li><a href="stup-sarajevo">Stup Sarajevo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>OLOVO</h1>
+        <p>"Čudotvorna Kraljice Bosne, u tvoje staro svetište dolazimo pred tvoj lik, čuvaj našu vjeru i naš dom..."</p>
+        <div class="sacred-symbols">👑 ✝ 🕊️</div>
+Autor: Ilija Antunović |<br> Za kontakt na moj Facebook profil <a href="https://www.facebook.com/share/17tZPqv4U2/" target="_blank">klikni ovdje</a>
+    </div>
+    </header>
+
+    <div class="container">
+
+<!-- OVDJE ZAVRŠAVA 1. DIO KODA ZA OLOVO. SLJEDEĆI 2. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 1: DETALJNA POVIJEST -->
+        <section class="section-card">
+            <h2>👑 1. Detaljna povijest i teološko značenje Gospe Olovske</h2>
+            <p>Svetište Gospe Olovske u Olovu, smješteno u pitoresknom planinskom kraju istočne Bosne, nosi povijesnu titulu najstarijeg marijanskog hodočasničkog mjesta na cijelom Balkanskom poluotoku. Njegovi korijeni sežu duboko u srednjovjekovnu prošlost bosanske države, u vrijeme kada su franjevci tek započinjali svoju stoljetnu duhovnu i kulturnu misiju na ovim prostorima. Olovo nije samo mjesto tihe molitve; ono je živi spomenik opstanka katoličanstva u Bosni i Hercegovini.</p>
+            
+            <h3>Srednjovjekovni sjaj i dolazak franjevaca</h3>
+            <p>Prvi pisani spomen olovskoga franjevačkog samostana i crkve potječe iz davne 1382. godine, u dekretu generala franjevačkog reda. Samostan je podignut u vrijeme procvata Olova kao rudarskog središta bogatog olovnom rudom. Crkva Uznesenja Blažene Djevice Marije brzo je postala duhovno žarište. U njoj se čuvala čudotvorna slika Gospe Olovske, pred kojom su vjernici, ali i bosanski plemići i kraljevi, pronalazili utjehu. Svetište je bilo toliko glasovito da su zabilježena masovna hodočašća iz Dalmacije, Dubrovnika, Mađarske i cijele uže Bosne.</p>
+            
+            <h3>Tragični požar 1704. godine i stoljeća skrivenog štovanja</h3>
+            <p>Nakon pada Bosne pod osmansku vlast, samostan je preživljavao pod teškim nametima, ali je svetište ostalo netaknuto sve do burnih vremena Bečkog rata. U stravičnoj noći 1704. godine, po nalogu lokalnih vlasti, crkva i samostan zapaljeni su i izgorjeli su do temelja. Uništena je i originalna čudotvorna slika. Franjevci su morali napustiti Olovo, no katolički puk nikada nije napustio ovo sveto tlo. Više od dvije stotine godina vjernici su se okupljali na golim ruševinama crkve, paleći svijeće na preostalom kamenu i moleći crnu Gospu za zagovor, što dokazuje neraskidivu vezu naroda i ovoga svetišta.</p>
+
+            <div class="quote-box">
+                "👑 ČUDOTVORNA MAJKA BOSNE: IAKO SPALJENO DO TEMELJA, SVETIŠTE NIKADA NIJE UGAŠENO U SRCIMA VJERNIKA. NA RUŠEVINAMA JE PROCVJETALA NOVA NADA, SVJEDOČEĆI DA SE MARIJANSKA POBOŽNOST NE MOŽE UNIŠTITI VATROM NI PROGONIMA. 👑"
+            </div>
+
+            <h3>Čudotvorni lik i obnova svetišta u 20. stoljeću</h3>
+            <p>Tek dolaskom Austro-Ugarske i uspostavom redovite crkvene hijerarhije, započinje planiranje obnove Olova. Godine 1932. podignuta je nova crkva u obliku tradicionalne bosanske kapele, prema nacrtu arhitekta Karla Paržika. Umjesto nestale slike, u svetište je postavljena nova čudotvorna slika Gospe Olovske, rad nepoznatog umjetnika iz 18. stoljeća, koja prikazuje Bogorodicu s djetetom Isusom u naručju. Danas ovo svetište ponovno blista starim sjajem, privlačeći tisuće hodočasnika koji traže duhovni mir i tjelesno ozdravljenje.</p>
+        </section>
+
+        <!-- SEKCIJA 2: DUHOVNI PROGRAM I ZAVJETI -->
+        <section class="section-card">
+            <h2>📿 2. Duhovni program, marijanski zavjeti i oblici pokore</h2>
+            <p>Hodočašće Gospi Olovskoj odlikuje se dubokom marijanskom pobožnošću, obiteljskim zavjetima i tradicijskim običajima koji su se prenosili s koljena na koljeno unutar bosanskih katoličkih obitelji:</p>
+
+            <div class="grid-5">
+                <div class="grid-card">
+                    <div class="icon">📿</div>
+                    <h4>Zavjetna krunica i procesije</h4>
+                    <p>Hodočasnici pjevajući marijanske pjesme sudjeluju u veličanstvenim procesijama s Gospinim likom oko svetišta.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🕯️</div>
+                    <h4>Paljenje velikih zavjetnih svijeća</h4>
+                    <p>Vjernici tradicionalno daruju masivne voštane svijeće za zdravlje obitelji i napredak doma.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🛐</div>
+                    <h4>Molitve pred Gospinom slikom</h4>
+                    <p>U tišini svetišta hodočasnici dodiruju okvir čudotvorne slike, prinoseći svoje najdublje zahvale i prošnje.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">👗</div>
+                    <h4>Tradicijske narodne nošnje</h4>
+                    <p>Na velike blagdane, stariji i mlađi vjernici oblače očuvane narodne nošnje, čuvajući kulturni identitet bosanskih Hrvata.</p>
+                </div>
+                <div class="grid-card">
+                    <div class="icon">🤝</div>
+                    <h4>Pomirenje i bratsko zajedništvo</h4>
+                    <p>Gospa Olovska okuplja ljude iz različitih krajeva, potičući na opraštanje unutar obitelji i među susjedima.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- OVDJE ZAVRŠAVA 2. DIO KODA ZA OLOVO. SLJEDEĆI 3. DIO ZALIJEPI ODMAH ISPOD OVE LINIJE -->
+        <!-- SEKCIJA 3: DETALJAN VODIČ KROZ LOKACIJE -->
+        <section class="section-card">
+            <h2>✝ 3. Detaljan vodič kroz mjesta koja morate obići</h2>
+            <p>Svetište u Olovu smješteno je na povijesnom brežuljku, okruženo stoljetnim stablima i mirom koji pruža savršeno okruženje za osobnu molitvu.</p>
+
+            <div class="places-grid">
+                <div class="place-subcard">
+                    <h3>⛪ I. Crkva Uznesenja Blažene Djevice Marije</h3>
+                    <p>Središnji objekt svetišta, izgrađen u prvoj polovici 20. stoljeća na temeljima stare srednjovjekovne crkve. Arhitektura podsjeća na staru bosansku kuću, uklapajući se savršeno u tradiciju ovoga kraja.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🎨 II. Čudotvorna slika Gospe Olovske</h3>
+                    <p>Smještena iznad glavnoga oltara, ova slika privlači poglede svih hodočasnika. Vjernici pred njom provode sate u tihoj meditaciji, preporučujući joj svoje obitelji, bolesne i sve životne tjeskobe.</p>
+                </div>
+
+                <div class="place-subcard">
+                    <h3>🌳 III. Gospino dvorište i vanjski oltar</h3>
+                    <p>Prostrano, uređeno dvorište u kojem se za vrijeme velikih ljetnih blagdana služe svete mise na otvorenom. Prirodni hlad starih lipa pruža idealno mjesto za odmor duše i osobnu pobožnost krunice.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKCIJA 4: PASTORALNI CENTAR I DUHOVNA SKRB -->
+        <section class="section-card">
+            <h2>🕊️ 4. Pastoralni život, hodočasnici i čuvari svetišta</h2>
+            <p>Olovsko svetište danas vode franjevci koji s ljubavlju dočekuju svakog hodočasnika i namjernika.</p>
+            
+            <ul class="badge-list">
+                <li>
+                    <strong>🏠 Pastoralni dom za hodočasnike:</strong> Objekt namijenjen za odmor hodočasnika koji pristižu iz udaljenih krajeva. Pruža prostor za okrjepu, duhovne razgovore i sakrament svete ispovijedi.
+                </li>
+                <li>
+                    <strong>📿 Sveta ispovijed i duhovno vodstvo:</strong> Tijekom svih marijanskih blagdana, u svetištu je osiguran dovoljan broj svećenika za ispovijed, omogućujući vjernicima potpuno duhovno rasterećenje i pomirenje s Bogom.
+                </li>
+                <li>
+                    <strong>🎨 Kulturna i povijesna zbirka:</strong> Unutar župnih prostorija čuvaju se povijesni dokumenti, stari predmeti i zavjetni darovi koji svjedoče o višestoljetnoj opstojnosti i važnosti Olova u povijesti Bosne Srebrene.
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEKCIJA 5: GODIŠNJI KALENDAR -->
+        <section class="section-card">
+            <h2>📅 5. Detaljni godišnji kalendar i važni datumi</h2>
+            <p>Svetište Gospe Olovske ima nekoliko ključnih hodočasničkih dana tijekom godine, kada se na ovom svetom brdu okuplja vjerni puk:</p>
+
+            <div class="event-box">
+                <strong>📆 1. svibnja: Otvaranje svibanjskih pobožnosti</strong><br>
+                Tradicionalni početak hodočasničke sezone. Vjernici iz okolnih župa i Sarajeva dolaze proslaviti početak Gospina mjeseca uz svečanu svetu misu i procesiju.
+            </div>
+
+            <div class="event-box">
+                <strong>👑 14. kolovoza: Uočnica blagdana Velike Gospe</strong><br>
+                U večernjim satima započinje hodočasnički program uz molitvu krunice, procesiju sa svijećama i Gospinim likom kroz dvorište te sveta misa bdijenja. Mnogi hodočasnici provode noć u molitvi pod otvorenim nebom.
+            </div>
+
+            <div class="event-box">
+                <strong>🌹 15. kolovoza: Svetkovina Uznesenja BDM (Velika Gospa)</strong><br>
+                Glavni hodočasnički dan u godini. Tisuće vjernika iz cijele Bosne, ali i dijaspore, slijevaju se u Olovo. Svečana pučka sveta misa na otvorenom održava se u 11:00 h, praćena tradicionalnim narodnim zajedništvom.
+            </div>
+
+            <div class="event-box">
+                <strong>🍂 8. rujna: Rođenje Blažene Djevice Marije (Mala Gospa)</strong><br>
+                Drugi veliki marijanski blagdan u svetištu koji okuplja domaće vjernike u intimnijoj, duboko molitvenoj atmosferi, čime se službeno zaokružuje ljetni ciklus velikih hodočašća.
+            </div>
+        </section>
+
+        <!-- SEKCIJA 6: PRAKTIČNI SAVJETI -->
+        <section class="section-card">
+            <h2>🧭 6. Praktični savjeti za hodočasnike</h2>
+            <p>Kako bi vaše hodočašće u Olovo proteklo u miru i dostojanstvu, predlažemo nekoliko korisnih savjeta:</p>
+            <ul>
+                <li><strong>Priprema za putovanje:</strong> Olovo se nalazi na planinskom prijevoju, pa su jutra i večeri, čak i usred ljeta, iznimno svježa. Ponesite topliju odjeću, osobito ako planirate dolazak na uočnicu i noćno bdijenje.</li>
+                <li><strong>Hodočasnički bonton:</strong> Budući da je cijeli prostor oko crkve sakralna zona, preporučuje se prikladna odjeća. Unutar crkve izbjegavajte korištenje mobilnih uređaja kako ne biste ometali druge u tihoj molitvi.</li>
+                <li><strong>Okrjepa i odmor:</strong> U sklopu svetišta nalazi se pitka izvorska voda. Preporučuje se ponijeti vlastitu hranu za jednodnevni boravak, dok pastoralni centar nudi prostor za kratki odmor i zaklon u slučaju lošeg vremena.</li>
+            </ul>
+        </section>
+
+    </div> <!-- Kraj glavnog kontejnera -->
+
+    <footer>
+        <p>&copy; 2026 Katolička Svetišta u Bosni i Hercegovini. Sva prava pridržana.</p>
+        <p>Projekt izrade digitalne arhive bosanskohercegovačkih svetišta u hodočasničkom duhu.</p>
+        <div class="footer-symbols">🕊️ ✝ 👑</div>
+    </footer>
+
+</body>
+</html>
